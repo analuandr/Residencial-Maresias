@@ -2,15 +2,15 @@
 // Fotos da Casa Jaboticabeira
 const fotosJaboticabeira = [
   {
-    url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
     caption: 'Fachada da Casa Jaboticabeira',
   },
   {
-    url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
     caption: 'Área externa da Casa',
   },
   {
-    url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
     caption: 'Área de lazer',
   },
 ]

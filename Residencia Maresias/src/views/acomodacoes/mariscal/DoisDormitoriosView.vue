@@ -22,7 +22,7 @@ const ap201 = {
   ],
   fotos: [
     {
-      url: 'assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
       alt: 'Vista principal do apartamento 201',
     },
   ],
@@ -50,7 +50,7 @@ const ap202 = {
   ],
   fotos: [
     {
-      url: 'assets/Fotos Site Mariscal/Mariscal 202/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 202/Foto 1.jpg',
       alt: 'Vista principal do apartamento 202',
     },
   ],
@@ -78,7 +78,7 @@ const ap204 = {
   ],
   fotos: [
     {
-      url: 'assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
       alt: 'Vista principal do apartamento 204',
     },
   ],

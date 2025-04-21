@@ -2,15 +2,15 @@
 // Fotos do residencial em Mariscal
 const fotosMariscal = [
   {
-    url: '/images/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
     caption: 'Fachada do Residencial Maresias Mariscal',
   },
   {
-    url: '/images/Fotos Site Mariscal/Mariscal 102/Foto 2.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 102/Foto 2.jpg',
     caption: 'Vista externa do Residencial',
   },
   {
-    url: '/images/Fotos Site Mariscal/Mariscal 201/Foto 3.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 3.jpg',
     caption: 'Área comum do Residencial',
   },
 ]

@@ -20,19 +20,19 @@ const ap201 = {
   ],
   fotos: [
     {
-      url: 'assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
       alt: 'Vista principal do apartamento 201',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
       alt: 'Foto do apartamento 201',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
       alt: 'Foto do apartamento 201',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
       alt: 'Foto do apartamento 201',
     },
   ],
@@ -58,19 +58,19 @@ const ap202 = {
   ],
   fotos: [
     {
-      url: 'assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
       alt: 'Vista principal do apartamento 202',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
       alt: 'Foto do apartamento 202',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
       alt: 'Foto do apartamento 202',
     },
     {
-      url: 'assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
       alt: 'Foto do apartamento 202',
     },
   ],

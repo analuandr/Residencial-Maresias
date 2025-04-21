@@ -4,19 +4,19 @@ import HomeCarousel from '@/components/HomeCarousel.vue'
 // Dados para o carrossel
 const carouselSlides = [
   {
-    image: 'assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
+    image: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
     title: 'Residencial Maresias - Bombas',
     description: 'Conforto e tranquilidade para suas férias em Bombas',
     link: '/residencial/bombas',
   },
   {
-    image: 'assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
+    image: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
     title: 'Residencial Maresias - Mariscal',
     description: 'Desfrute de momentos inesquecíveis em Mariscal',
     link: '/residencial/mariscal',
   },
   {
-    image: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+    image: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
     title: 'Casa Jaboticabeira',
     description: 'Conforto e exclusividade para grupos e famílias',
     link: '/residencial/casa-jaboticabeira',

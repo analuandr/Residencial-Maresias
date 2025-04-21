@@ -2,15 +2,15 @@
 // Fotos do residencial em Bombas
 const fotosBombas = [
   {
-    url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
+    url: 'assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
     caption: 'Fachada do Residencial Maresias Bombas',
   },
   {
-    url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
+    url: 'assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
     caption: 'Vista externa do Residencial',
   },
   {
-    url: '/src/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
+    url: 'assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
     caption: 'Área comum do Residencial',
   },
 ]

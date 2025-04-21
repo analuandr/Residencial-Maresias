@@ -22,27 +22,27 @@ const ap101 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
       alt: 'Vista principal do apartamento 101',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
       alt: 'Foto do apartamento 101',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 3.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 3.jpg',
       alt: 'Foto do apartamento 101',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 4.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 4.jpg',
       alt: 'Foto do apartamento 101',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 5.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 5.jpg',
       alt: 'Foto do apartamento 101',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 101/Foto 6.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 101/Foto 6.jpg',
       alt: 'Foto do apartamento 101',
     },
   ],
@@ -70,27 +70,27 @@ const ap102 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 1.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 1.jpg',
       alt: 'Vista principal do apartamento 102',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
       alt: 'Foto do apartamento 102',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 3.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 3.jpg',
       alt: 'Foto do apartamento 102',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 4.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 4.jpg',
       alt: 'Foto do apartamento 102',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 5.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 5.jpg',
       alt: 'Foto do apartamento 102',
     },
     {
-      url: '/src/assets/Fotos Site Bombas/Bombas 102/Foto 6.jpg',
+      url: 'assets/Fotos Site Bombas/Bombas 102/Foto 6.jpg',
       alt: 'Foto do apartamento 102',
     },
   ],

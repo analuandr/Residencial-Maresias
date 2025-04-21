@@ -72,7 +72,7 @@ onUnmounted(() => {
       <div class="container nav-container">
         <!-- Logo na Navegação (Esquerda) -->
         <RouterLink to="/" class="nav-logo-link">
-          <img src="/src/assets/logo.png" alt="Logo Maresias" class="nav-logo" />
+          <img src="/logo.png" alt="Logo Maresias" class="nav-logo" />
         </RouterLink>
 
         <!-- Botão do menu mobile -->

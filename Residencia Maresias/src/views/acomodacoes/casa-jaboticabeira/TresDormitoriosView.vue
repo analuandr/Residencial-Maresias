@@ -23,27 +23,27 @@ const casaJaboticabeira = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
       alt: 'Vista principal da Casa Jaboticabeira',
     },
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
       alt: 'Foto da Casa Jaboticabeira',
     },
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
       alt: 'Foto da Casa Jaboticabeira',
     },
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
       alt: 'Foto da Casa Jaboticabeira',
     },
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
       alt: 'Foto da Casa Jaboticabeira',
     },
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
       alt: 'Foto da Casa Jaboticabeira',
     },
   ],

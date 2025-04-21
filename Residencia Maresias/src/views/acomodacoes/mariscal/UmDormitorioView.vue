@@ -21,7 +21,7 @@ const ap101 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
       alt: 'Foto do apartamento 101',
     },
   ],
@@ -48,7 +48,7 @@ const ap102 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 102/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 102/Foto 1.jpg',
       alt: 'Foto do apartamento 102',
     },
   ],
@@ -75,7 +75,7 @@ const ap104 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 104/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 104/Foto 1.jpg',
       alt: 'Foto do apartamento 104',
     },
   ],

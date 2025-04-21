@@ -4,15 +4,15 @@ import { RouterLink } from 'vue-router'
 // Imagens da praia
 const fotosPreaia = [
   {
-    url: '/src/assets/Fotos Site Mariscal/Praia/Foto 1.jpg',
+    url: 'assets/Fotos Site Mariscal/Praia/Foto 1.jpg',
     caption: 'Vista panorâmica da Praia de Mariscal',
   },
   {
-    url: '/src/assets/Fotos Site Mariscal/Praia/Foto 2.jpg',
+    url: 'assets/Fotos Site Mariscal/Praia/Foto 2.jpg',
     caption: 'Areias brancas e águas cristalinas',
   },
   {
-    url: '/src/assets/Fotos Site Mariscal/Praia/Foto 3.jpg',
+    url: 'assets/Fotos Site Mariscal/Praia/Foto 3.jpg',
     caption: 'Pôr do sol na Praia de Mariscal',
   },
 ]

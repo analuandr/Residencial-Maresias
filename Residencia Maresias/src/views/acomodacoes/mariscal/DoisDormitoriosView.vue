@@ -22,7 +22,7 @@ const ap201 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
       alt: 'Vista principal do apartamento 201',
     },
   ],
@@ -50,7 +50,7 @@ const ap202 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 202/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 202/Foto 1.jpg',
       alt: 'Vista principal do apartamento 202',
     },
   ],
@@ -78,7 +78,7 @@ const ap204 = {
   ],
   fotos: [
     {
-      url: '/src/assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
+      url: 'assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
       alt: 'Vista principal do apartamento 204',
     },
   ],
@@ -104,8 +104,6 @@ const ap204 = {
       :linkReserva="ap201.linkReserva"
     />
 
-    <hr class="acomodacao-divider" />
-
     <AcomodacaoDisplay
       :titulo="ap202.titulo"
       :capacidade="ap202.capacidade"
@@ -113,8 +111,6 @@ const ap204 = {
       :fotos="ap202.fotos"
       :linkReserva="ap202.linkReserva"
     />
-
-    <hr class="acomodacao-divider" />
 
     <AcomodacaoDisplay
       :titulo="ap204.titulo"
@@ -141,13 +137,5 @@ const ap204 = {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
-}
-
-.acomodacao-divider {
-  border: none;
-  height: 2px;
-  background: var(--beach-gradient);
-  margin: 3rem auto;
-  width: 80%;
 }
 </style>

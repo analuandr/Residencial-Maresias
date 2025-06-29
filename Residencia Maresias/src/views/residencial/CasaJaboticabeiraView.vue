@@ -6,15 +6,15 @@ const { t } = useI18n()
 // Fotos da Casa Jaboticabeira
 const fotosJaboticabeira = [
   {
-    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
     caption: t('residentialPages.jaboticabeira.photos.facade'),
   },
   {
-    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
     caption: t('residentialPages.jaboticabeira.photos.gourmetArea'),
   },
   {
-    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
     caption: t('residentialPages.jaboticabeira.photos.masterSuite'),
   },
 ]

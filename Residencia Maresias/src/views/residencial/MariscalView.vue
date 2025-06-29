@@ -6,15 +6,15 @@ const { t } = useI18n()
 // Fotos do residencial em Canto Grande
 const fotosCantoGrande = [
   {
-    url: '/assets/Canto Grande/Fachada Canto Grande.JPG',
+    url: '/Residencial-Maresias/assets/Canto Grande/Fachada Canto Grande.JPG',
     caption: t('residentialPages.mariscal.photos.facade'),
   },
   {
-    url: '/assets/Canto Grande/Exterior Canto Grande.jpg',
+    url: '/Residencial-Maresias/assets/Canto Grande/Exterior Canto Grande.jpg',
     caption: t('residentialPages.mariscal.photos.exterior'),
   },
   {
-    url: '/assets/Canto Grande/Vista aérea.jpg',
+    url: '/Residencial-Maresias/assets/Canto Grande/Vista aérea.jpg',
     caption: t('residentialPages.mariscal.photos.aerial'),
   },
 ]

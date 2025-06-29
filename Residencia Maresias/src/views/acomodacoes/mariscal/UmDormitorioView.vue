@@ -25,19 +25,19 @@ const ap201 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 4.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 201/Quarto 201.JPG',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Quarto 201.JPG',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
   ],
@@ -65,11 +65,11 @@ const ap204 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 204/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
   ],

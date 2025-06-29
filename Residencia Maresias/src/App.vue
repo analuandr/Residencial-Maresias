@@ -330,7 +330,7 @@ a:hover {
 
 /* Ajustes para a imagem de fundo */
 .beach-header-bg {
-  background-image: url('/assets/beach-header-bg.jpg');
+  background-image: url('/Residencial-Maresias/assets/beach-header-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -25,27 +25,27 @@ const ap101 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 3.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 3.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 4.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 5.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 5.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 101/Foto 6.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 6.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
   ],
@@ -73,27 +73,27 @@ const ap102 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 1.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 3.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 3.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 4.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 5.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 5.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Bombas/Bombas 102/Foto 6.jpg',
+      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 102/Foto 6.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
   ],

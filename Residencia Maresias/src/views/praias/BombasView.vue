@@ -1,45 +1,49 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
-// Imagens da praia
-const fotosPreaia = [
-  {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Praia/Foto 1.jpg',
-    caption: 'Vista panorâmica da Praia de Bombas',
-  },
-  {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Praia/Foto 2.jpg',
-    caption: 'Areias brancas e águas cristalinas',
-  },
-  {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Praia/Foto 3.jpg',
-    caption: 'Pôr do sol na Praia de Bombas',
-  },
-]
+const { t } = useI18n()
 
-// Atrações e atividades
-const atracoes = [
+// Imagens da praia - agora reativos
+const fotosPreaia = computed(() => [
   {
-    icon: 'pool', // fa-water
-    nome: 'Esportes Aquáticos',
-    descricao: 'Aluguel de caiaques, stand-up paddle e prática de surf para iniciantes.',
+    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/10/2e/3c/praia-de-bombas.jpg?w=1200&h=-1&s=1',
+    caption: t('photoCaption.panoramicView', { beach: 'Bombas' }),
   },
   {
-    icon: 'directions_walk', // fa-person-walking
-    nome: 'Caminhada na Orla',
-    descricao: 'Calçadão completo para caminhadas com vista para o mar.',
+    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/4a/b6/0a/praia-de-bombas.jpg?w=1200&h=-1&s=1',
+    caption: t('photoCaption.whiteBeaches'),
   },
   {
-    icon: 'restaurant', // fa-utensils
-    nome: 'Gastronomia Local',
-    descricao: 'Diversos restaurantes e quiosques com frutos do mar frescos e culinária local.',
+    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f3/e1/f2/praia-de-bombas.jpg?w=1200&h=-1&s=1',
+    caption: t('photoCaption.sunset', { beach: 'Bombas' }),
+  },
+])
+
+// Atrações e atividades - agora reativos
+const atracoes = computed(() => [
+  {
+    icon: 'pool',
+    nome: t('beaches.bombas.attractions.waterSports.name'),
+    descricao: t('beaches.bombas.attractions.waterSports.description'),
   },
   {
-    icon: 'store', // fa-store
-    nome: 'Comércio',
-    descricao: 'Lojas de artesanato, souvenirs e produtos de praia ao longo da avenida principal.',
+    icon: 'directions_walk',
+    nome: t('beaches.bombas.attractions.walkingPath.name'),
+    descricao: t('beaches.bombas.attractions.walkingPath.description'),
   },
-]
+  {
+    icon: 'restaurant',
+    nome: t('beaches.bombas.attractions.gastronomy.name'),
+    descricao: t('beaches.bombas.attractions.gastronomy.description'),
+  },
+  {
+    icon: 'store',
+    nome: t('beaches.bombas.attractions.commerce.name'),
+    descricao: t('beaches.bombas.attractions.commerce.description'),
+  },
+])
 </script>
 
 <template>
@@ -47,18 +51,15 @@ const atracoes = [
     <section class="section-full-width praia-header-section">
       <div class="container">
         <div class="praia-header">
-          <h1><span class="material-icons">beach_access</span> Praia de Bombas</h1>
-          <p>
-            Uma das praias mais encantadoras de Santa Catarina, Bombas encanta com suas águas
-            calmas, areias brancas e uma infraestrutura completa para turistas.
-          </p>
+          <h1><span class="material-icons">beach_access</span> {{ t('beaches.bombas.title') }}</h1>
+          <p>{{ t('beaches.bombas.description') }}</p>
         </div>
       </div>
     </section>
 
     <section class="section-full-width galeria-section">
       <div class="container">
-        <h2><span class="material-icons">collections</span> Galeria de Fotos</h2>
+        <!-- <h2><span class="material-icons">collections</span> {{ t('beaches.bombas.galleryTitle') }}</h2> -->
         <div class="galeria-praia">
           <div v-for="(foto, index) in fotosPreaia" :key="index" class="foto-item">
             <img :src="foto.url" :alt="foto.caption" />
@@ -72,25 +73,16 @@ const atracoes = [
       <div class="container">
         <div class="informacoes-section">
           <div class="info-column">
-            <h2><span class="material-icons">info</span> Sobre a Praia</h2>
-            <p>
-              A Praia de Bombas está localizada no município de Bombinhas, em Santa Catarina. Com
-              aproximadamente 2 km de extensão, é uma das praias mais procuradas da região, sendo
-              ideal para famílias devido às suas águas calmas e de pouca profundidade.
-            </p>
-            <p>
-              Além da beleza natural, a praia conta com uma infraestrutura completa, com diversas
-              opções de restaurantes, bares, lojas e serviços para atender aos turistas que visitam
-              o local durante o ano todo, especialmente na alta temporada.
-            </p>
-            <p>
-              A temperatura da água é agradável para banho durante os meses de verão, e a praia é
-              protegida por morros que ajudam a formar uma baía abrigada dos ventos fortes.
-            </p>
+            <h2><span class="material-icons">info</span> {{ t('beaches.bombas.aboutTitle') }}</h2>
+            <p>{{ t('beaches.bombas.aboutText1') }}</p>
+            <p>{{ t('beaches.bombas.aboutText2') }}</p>
+            <p>{{ t('beaches.bombas.aboutText3') }}</p>
           </div>
 
           <div class="info-column">
-            <h2><span class="material-icons">star</span> Atrações e Atividades</h2>
+            <h2>
+              <span class="material-icons">star</span> {{ t('beaches.bombas.attractionsTitle') }}
+            </h2>
             <div class="atracoes-list">
               <div v-for="(atracao, index) in atracoes" :key="index" class="atracao-item">
                 <h3>
@@ -107,7 +99,9 @@ const atracoes = [
     <section class="section-full-width mapa-outer-section">
       <div class="container">
         <div class="mapa-section">
-          <h2><span class="material-icons">location_on</span> Localização</h2>
+          <h2>
+            <span class="material-icons">location_on</span> {{ t('beaches.bombas.locationTitle') }}
+          </h2>
           <div class="mapa-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28573.602747188644!2d-48.5047539!3d-27.138099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b10287e44cbf%3A0x5334b6a6a546c5c5!2sBombas%2C%20Bombinhas%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1656954896594!5m2!1spt-BR!2sbr"
@@ -128,20 +122,19 @@ const atracoes = [
       <div class="container">
         <div class="residencial-cta">
           <h2>
-            <span class="material-icons">apartment</span> Hospede-se próximo à Praia de Bombas
+            <span class="material-icons">apartment</span> {{ t('beaches.bombas.hostingTitle') }}
           </h2>
-          <p>
-            O Residencial Maresias Bombas está localizado a apenas 150 metros da praia, oferecendo
-            conforto e comodidade para você aproveitar ao máximo sua estadia.
-          </p>
+          <p>{{ t('beaches.bombas.hostingDescription') }}</p>
           <div class="cta-buttons">
-            <RouterLink to="/residencial/bombas" class="btn">Conheça o Residencial</RouterLink>
-            <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="btn btn-outline"
-              >Apartamentos de 1 Dormitório</RouterLink
-            >
-            <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="btn btn-outline"
-              >Apartamentos de 2 Dormitórios</RouterLink
-            >
+            <RouterLink to="/residencial/bombas" class="btn">{{
+              t('actions.knowResidential')
+            }}</RouterLink>
+            <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="btn btn-outline">
+              {{ t('actions.oneBedroom') }}
+            </RouterLink>
+            <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="btn btn-outline">
+              {{ t('actions.twoBedrooms') }}
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -374,7 +367,23 @@ const atracoes = [
   flex-wrap: wrap; /* Permitir quebra de linha em telas menores */
 }
 
+/* Reduzir espaçamento entre seções */
+.mapa-outer-section {
+  background-color: var(--beach-bg-light);
+  padding-bottom: 1rem; /* Reduzido de 3rem para 1rem */
+}
+
+.cta-outer-section {
+  background-color: var(--light-color);
+  padding-top: 1rem; /* Reduzido de 3rem para 1rem */
+}
+
 @media (max-width: 768px) {
+  /* Aumentar padding lateral no mobile */
+  .section-full-width .container {
+    padding: 0 1.5rem;
+  }
+
   .section-full-width {
     padding: 2rem 0;
   }
@@ -387,7 +396,7 @@ const atracoes = [
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  .informacoes-section {
+  .info-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -409,8 +418,15 @@ const atracoes = [
     align-items: center;
   }
   .cta-buttons .btn {
-    width: 80%; /* Fazer botões ocuparem mais largura */
+    width: 80%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .section-full-width .container {
+    padding: 0 2rem;
   }
 }
 </style>

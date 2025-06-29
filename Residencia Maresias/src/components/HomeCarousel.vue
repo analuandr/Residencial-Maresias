@@ -150,13 +150,15 @@ onBeforeUnmount(() => {
 }
 
 .slide-content {
-  padding: 2rem;
+  padding: 3rem;
   max-width: 600px;
-  max-height: 280px;
+  max-height: 320px;
   min-width: 600px;
-  min-height: 280px;
+  min-height: 320px;
   background-color: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: fadeIn 1s ease-out;
   position: relative;
   z-index: 2;
@@ -247,7 +249,8 @@ onBeforeUnmount(() => {
 
   .slide-content {
     max-width: 85%;
-    padding: 1.5rem;
+    padding: 2rem;
+    border-radius: 15px;
   }
 
   .slide-content h2 {

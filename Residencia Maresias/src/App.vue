@@ -1,6 +1,9 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import HeaderMenu from './components/HeaderMenu.vue'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -14,39 +17,35 @@ import HeaderMenu from './components/HeaderMenu.vue'
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-section">
-            <h3><span class="material-icons">location_on</span> Locais</h3>
+          <div class="footer-section footer-left">
+            <h3>
+              <span class="material-icons">location_on</span> {{ t('footer.locations.title') }}
+            </h3>
             <ul>
               <li>
                 <RouterLink to="/residencial/bombas">
-                  <span class="material-icons">chevron_right</span> Bombas
+                  <span class="material-icons">chevron_right</span>
+                  {{ t('footer.locations.bombas') }}
                 </RouterLink>
               </li>
               <li>
                 <RouterLink to="/residencial/mariscal">
-                  <span class="material-icons">chevron_right</span> Mariscal
+                  <span class="material-icons">chevron_right</span>
+                  {{ t('footer.locations.mariscal') }}
                 </RouterLink>
               </li>
               <li>
                 <RouterLink to="/residencial/casa-jaboticabeira">
-                  <span class="material-icons">chevron_right</span> Casa Jaboticabeira
+                  <span class="material-icons">chevron_right</span>
+                  {{ t('footer.locations.jaboticabeira') }}
                 </RouterLink>
               </li>
             </ul>
           </div>
 
-          <div class="footer-section">
-            <h3><span class="material-icons">info</span> Sobre nós</h3>
-            <p>
-              Residencial Maresias oferece acomodações confortáveis próximas às mais belas praias de
-              Santa Catarina.
-            </p>
-          </div>
-
-          <div class="footer-section">
-            <h3><span class="material-icons">phone</span> Contato</h3>
-            <p><span class="material-icons">email</span> contato@residencialmaresias.com.br</p>
-            <p><span class="material-icons">call</span> (47) 9999-9999</p>
+          <div class="footer-section footer-right">
+            <h3><span class="material-icons">info</span> {{ t('footer.about.title') }}</h3>
+            <p>{{ t('footer.about.description') }}</p>
           </div>
 
           <!-- <div class="footer-section">
@@ -60,10 +59,7 @@ import HeaderMenu from './components/HeaderMenu.vue'
         </div>
 
         <div class="footer-bottom">
-          <p>
-            &copy; {{ new Date().getFullYear() }} Residencial Maresias. Todos os direitos
-            reservados.
-          </p>
+          <p>&copy; {{ new Date().getFullYear() }} {{ t('footer.copyright') }}</p>
         </div>
       </div>
     </footer>
@@ -137,7 +133,7 @@ main {
 
 /* Estilos para o footer */
 .footer {
-  background: var(--beach-gradient);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
   padding: 3rem 0 1.5rem;
   margin-top: 2rem;
@@ -149,6 +145,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 2rem;
+  gap: 2rem;
 }
 
 .footer-section {
@@ -156,6 +153,15 @@ main {
   min-width: 250px;
   margin-bottom: 1.5rem;
   padding: 0 1rem;
+}
+
+/* Posicionamento específico das seções */
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
 }
 
 .footer-section h3 {
@@ -168,11 +174,19 @@ main {
 .footer-section h3::after {
   content: '';
   position: absolute;
-  left: 0;
   bottom: 0;
   width: 50px;
   height: 2px;
   background-color: var(--accent-color);
+}
+
+/* Ajuste da linha decorativa para cada seção */
+.footer-left h3::after {
+  left: 0;
+}
+
+.footer-right h3::after {
+  right: 0;
 }
 
 .footer-section h3 i {
@@ -281,7 +295,7 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.7rem 1.8rem;
-  background: var(--beach-gradient);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border: none;
   border-radius: 50px; /* Botões mais arredondados */
@@ -291,15 +305,16 @@ a:hover {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   font-family: var(--body-font);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
   text-decoration: none;
   color: white;
+  background: linear-gradient(135deg, #764ba2, #667eea);
 }
 
 .btn-outline {
@@ -315,7 +330,7 @@ a:hover {
 
 /* Ajustes para a imagem de fundo */
 .beach-header-bg {
-  background-image: url('assets/beach-header-bg.jpg');
+  background-image: url('/assets/beach-header-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -405,13 +420,40 @@ a:hover {
 
 /* Estilos responsivos para o footer */
 @media (max-width: 768px) {
+  /* Aumentar padding lateral do container no mobile */
+  .container {
+    padding: 0 1.5rem;
+  }
+
   .footer-content {
     flex-direction: column;
+    gap: 1rem;
   }
 
   .footer-section {
     padding: 0;
     margin-bottom: 2rem;
+  }
+
+  /* Em dispositivos móveis, centralizar o texto */
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+
+  /* Centralizar a linha decorativa em dispositivos móveis */
+  .footer-left h3::after,
+  .footer-right h3::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .container {
+    padding: 0 2rem;
   }
 }
 </style>

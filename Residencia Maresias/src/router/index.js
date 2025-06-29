@@ -3,11 +3,21 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior() {
+    // Sempre rola para o topo da página após navegação
+    return { left: 0, top: 0 }
+  },
   routes: [
     {
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    // Página geral do residencial
+    {
+      path: '/residencial',
+      name: 'residencial',
+      component: () => import('../views/ResidencialView.vue'),
     },
     // Páginas de "O Residencial"
     {

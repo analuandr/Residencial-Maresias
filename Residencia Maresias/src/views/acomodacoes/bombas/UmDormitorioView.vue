@@ -1,91 +1,94 @@
 <script setup>
+import { computed } from 'vue'
 import AcomodacaoDisplay from '@/components/AcomodacaoDisplay.vue'
+import { useI18n } from 'vue-i18n'
 
-// Dados para o apartamento 201
-const ap201 = {
-  titulo: '201 – Andar Superior – 4 Pessoas',
-  capacidade: 'Acomoda até 4 pessoas',
+const { t } = useI18n()
+
+// Dados para o apartamento 201 - agora reativos
+const ap201 = computed(() => ({
+  titulo: t('apartments.bombas.ap201.title'),
+  capacidade: t('apartments.bombas.ap201.capacity'),
   itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala com Smart TV e Sofá bicama',
-    'Dormitório com Cama Box Casal',
-    'Ar-condicionado split no dormitório',
-    'Ducha com aquecimento solar',
-    'Gás central',
-    'Varanda com churrasqueira e tanque',
-    'Estacionamento privativo 1 vaga',
+    t('accommodations.amenities.beachChairs'),
+    t('accommodations.amenities.umbrella'),
+    t('accommodations.amenities.bedding'),
+    t('accommodations.amenities.fullKitchen'),
+    t('accommodations.amenities.livingRoomTv'),
+    t('accommodations.amenities.masterSuite'),
+    t('accommodations.amenities.airConditioningBedroom'),
+    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.solarShower'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
-      alt: 'Vista principal do apartamento 201',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
-      alt: 'Foto do apartamento 201',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
-      alt: 'Foto do apartamento 201',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
-      alt: 'Foto do apartamento 201',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
   ],
-  linkReserva: 'https://marcosimoveis.com.br/4pessoas-1quartos-1garagens-pet-l094',
-}
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel76',
+  rotaInterna: '/acomodacoes/bombas/1-dormitorio',
+}))
 
-// Dados para o apartamento 202
-const ap202 = {
-  titulo: '202 – Andar Superior – 4 Pessoas',
-  capacidade: 'Acomoda até 4 pessoas',
+// Dados para o apartamento 202 - agora reativos
+const ap202 = computed(() => ({
+  titulo: t('apartments.bombas.ap202.title'),
+  capacidade: t('apartments.bombas.ap202.capacity'),
   itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala com Smart TV e Sofá bicama',
-    'Dormitório com Cama Box Casal',
-    'Ar-condicionado split no dormitório',
-    'Ducha com aquecimento solar',
-    'Gás central',
-    'Varanda com churrasqueira e tanque',
-    'Estacionamento privativo 1 vaga',
+    t('accommodations.amenities.beachChairs'),
+    t('accommodations.amenities.umbrella'),
+    t('accommodations.amenities.bedding'),
+    t('accommodations.amenities.fullKitchen'),
+    t('accommodations.amenities.livingRoomTv'),
+    t('accommodations.amenities.masterSuite'),
+    t('accommodations.amenities.airConditioningBedroom'),
+    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.solarShower'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
-      alt: 'Vista principal do apartamento 202',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
-      alt: 'Foto do apartamento 202',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
-      alt: 'Foto do apartamento 202',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
-      alt: 'Foto do apartamento 202',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
   ],
-  linkReserva: 'https://marcosimoveis.com.br/4pessoas-1quartos-1garagens-pet-l095',
-}
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel75',
+  rotaInterna: '/acomodacoes/bombas/1-dormitorio',
+}))
 </script>
 
 <template>
   <div class="container">
     <div class="acomodacoes-header">
-      <h1>Acomodações em Bombas - 1 Dormitório</h1>
-      <p>
-        Nossos apartamentos de 1 dormitório em Bombas são confortáveis e completos, ideais para
-        casais ou pequenas famílias.
-      </p>
+      <h1>{{ t('accommodations.bombas.oneBedroom.title') }}</h1>
+      <p>{{ t('accommodations.bombas.oneBedroom.description') }}</p>
     </div>
 
     <AcomodacaoDisplay
@@ -94,6 +97,7 @@ const ap202 = {
       :itens="ap201.itens"
       :fotos="ap201.fotos"
       :linkReserva="ap201.linkReserva"
+      :rotaInterna="ap201.rotaInterna"
     />
 
     <hr class="acomodacao-divider" />
@@ -104,6 +108,7 @@ const ap202 = {
       :itens="ap202.itens"
       :fotos="ap202.fotos"
       :linkReserva="ap202.linkReserva"
+      :rotaInterna="ap202.rotaInterna"
     />
   </div>
 </template>

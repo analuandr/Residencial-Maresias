@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   titulo: {
@@ -20,7 +23,11 @@ const props = defineProps({
   },
   linkReserva: {
     type: String,
-    required: true,
+    required: false,
+  },
+  rotaInterna: {
+    type: String,
+    required: false,
   },
 })
 
@@ -71,16 +78,27 @@ const fotoAnterior = () => {
         <li v-for="(item, index) in itens" :key="index">{{ item }}</li>
       </ul>
       <div class="botoes">
-        <a :href="linkReserva" target="_blank" rel="noopener noreferrer" class="btn reservar"
-          >Reservar</a
-        >
         <a
+          v-if="linkReserva"
+          :href="linkReserva"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn reservar"
+        >
+          {{ t('accommodations.reserve') }}
+        </a>
+        <router-link v-if="rotaInterna" :to="rotaInterna" class="btn btn-outline mais-info">
+          {{ t('actions.viewGallery') }}
+        </router-link>
+        <a
+          v-else-if="linkReserva"
           :href="linkReserva"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline mais-info"
-          >Mais Informações</a
         >
+          {{ t('actions.viewGallery') }}
+        </a>
       </div>
     </div>
 
@@ -127,12 +145,15 @@ const fotoAnterior = () => {
 .miniatura {
   width: calc(25% - 0.5rem);
   cursor: pointer;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .miniatura img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
   transition: opacity 0.3s;
 }
 
@@ -238,6 +259,7 @@ const fotoAnterior = () => {
 
   .miniatura {
     width: calc(33.33% - 0.5rem);
+    aspect-ratio: 4/3;
   }
 }
 </style>

@@ -1,17 +1,21 @@
 <script setup>
-// Fotos do residencial em Mariscal
-const fotosMariscal = [
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+// Fotos do residencial em Canto Grande
+const fotosCantoGrande = [
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
-    caption: 'Fachada do Residencial Maresias Mariscal',
+    url: '/assets/Canto Grande/Fachada Canto Grande.JPG',
+    caption: t('residentialPages.mariscal.photos.facade'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 102/Foto 2.jpg',
-    caption: 'Vista externa do Residencial',
+    url: '/assets/Canto Grande/Exterior Canto Grande.jpg',
+    caption: t('residentialPages.mariscal.photos.exterior'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 201/Foto 3.jpg',
-    caption: 'Área comum do Residencial',
+    url: '/assets/Canto Grande/Vista aérea.jpg',
+    caption: t('residentialPages.mariscal.photos.aerial'),
   },
 ]
 
@@ -19,28 +23,33 @@ const fotosMariscal = [
 const pontosProximos = [
   {
     icon: 'beach_access',
-    nome: 'Praia de Mariscal',
-    distancia: '200 metros',
-    descricao:
-      'Uma das praias mais tranquilas de Bombinhas, perfeita para quem busca sossego e beleza natural.',
+    nome: t('residentialPages.mariscal.location.nearbyPoints.marDeFora.name'),
+    distancia: t('residentialPages.mariscal.location.nearbyPoints.marDeFora.distance'),
+    descricao: t('residentialPages.mariscal.location.nearbyPoints.marDeFora.description'),
+  },
+  {
+    icon: 'beach_access',
+    nome: t('residentialPages.mariscal.location.nearbyPoints.marDeDentro.name'),
+    distancia: t('residentialPages.mariscal.location.nearbyPoints.marDeDentro.distance'),
+    descricao: t('residentialPages.mariscal.location.nearbyPoints.marDeDentro.description'),
   },
   {
     icon: 'shopping_cart',
-    nome: 'Mercado [Nome]',
-    distancia: '150 metros',
-    descricao: 'Mercado completo com tudo que você precisa para sua estadia.',
+    nome: t('residentialPages.mariscal.location.nearbyPoints.market.name'),
+    distancia: t('residentialPages.mariscal.location.nearbyPoints.market.distance'),
+    descricao: t('residentialPages.mariscal.location.nearbyPoints.market.description'),
   },
   {
     icon: 'restaurant',
-    nome: 'Restaurantes',
-    distancia: '250 metros',
-    descricao: 'Diversos restaurantes com gastronomia local e internacional.',
+    nome: t('residentialPages.mariscal.location.nearbyPoints.restaurants.name'),
+    distancia: t('residentialPages.mariscal.location.nearbyPoints.restaurants.distance'),
+    descricao: t('residentialPages.mariscal.location.nearbyPoints.restaurants.description'),
   },
   {
-    icon: 'medication',
-    nome: 'Farmácia',
-    distancia: '300 metros',
-    descricao: 'Farmácia próxima para sua conveniência.',
+    icon: 'location_city',
+    nome: t('residentialPages.mariscal.location.nearbyPoints.center.name'),
+    distancia: t('residentialPages.mariscal.location.nearbyPoints.center.distance'),
+    descricao: t('residentialPages.mariscal.location.nearbyPoints.center.description'),
   },
 ]
 </script>
@@ -50,20 +59,18 @@ const pontosProximos = [
     <section class="section-full-width residencial-header-section">
       <div class="container">
         <div class="residencial-header">
-          <h1><span class="material-icons">apartment</span> Residencial Maresias Mariscal</h1>
-          <p>
-            Conheça nosso residencial localizado em Mariscal, Bombinhas - SC, a apenas 200 metros da
-            praia, com toda a infraestrutura que você precisa para suas férias.
-          </p>
+          <h1>
+            <span class="material-icons">apartment</span> {{ t('residentialPages.mariscal.title') }}
+          </h1>
+          <p>{{ t('residentialPages.mariscal.subtitle') }}</p>
         </div>
       </div>
     </section>
 
     <section class="section-full-width galeria-section">
       <div class="container">
-        <h2><span class="material-icons">collections</span> Galeria de Fotos do Residencial</h2>
         <div class="galeria-residencial">
-          <div v-for="(foto, index) in fotosMariscal" :key="index" class="foto-item">
+          <div v-for="(foto, index) in fotosCantoGrande" :key="index" class="foto-item">
             <img :src="foto.url" :alt="foto.caption" />
             <p class="foto-caption">{{ foto.caption }}</p>
           </div>
@@ -75,29 +82,25 @@ const pontosProximos = [
       <div class="container">
         <div class="informacoes-section">
           <div class="info-column">
-            <h2><span class="material-icons">info</span> Sobre o Residencial</h2>
-            <p>
-              O Residencial Maresias em Mariscal oferece apartamentos de 1 e 2 dormitórios, todos
-              equipados com o necessário para proporcionar uma estadia confortável e tranquila.
-            </p>
-            <p>
-              Localizado em uma área mais tranquila de Bombinhas, o Residencial Maresias Mariscal é
-              ideal para quem busca sossego e contato com a natureza, sem abrir mão do conforto.
-            </p>
-            <p>
-              Todas as unidades contam com ar-condicionado, internet Wi-Fi, TV, cozinha completa e
-              área de serviço, além de estacionamento privativo.
-            </p>
+            <h2>
+              <span class="material-icons">info</span>
+              {{ t('residentialPages.mariscal.about.title') }}
+            </h2>
+            <p>{{ t('residentialPages.mariscal.about.paragraph1') }}</p>
+            <p>{{ t('residentialPages.mariscal.about.paragraph2') }}</p>
+            <p>{{ t('residentialPages.mariscal.about.paragraph3') }}</p>
           </div>
-
           <div class="info-column">
-            <h2><span class="material-icons">signpost</span> Localização e Arredores</h2>
+            <h2>
+              <span class="material-icons">signpost</span>
+              {{ t('residentialPages.mariscal.location.title') }}
+            </h2>
             <div class="pontos-proximos">
-              <div v-for="(ponto, index) in pontosProximos" :key="index" class="ponto-item">
+              <div class="ponto-item" v-for="(ponto, index) in pontosProximos" :key="index">
                 <h3>
                   <span class="material-icons">{{ ponto.icon }}</span> {{ ponto.nome }}
                 </h3>
-                <p class="distancia">Distância: {{ ponto.distancia }}</p>
+                <p class="distancia">{{ t('general.location') }}: {{ ponto.distancia }}</p>
                 <p>{{ ponto.descricao }}</p>
               </div>
             </div>
@@ -109,10 +112,13 @@ const pontosProximos = [
     <section class="section-full-width mapa-outer-section">
       <div class="container">
         <div class="mapa-section">
-          <h2><span class="material-icons">location_on</span> Como Chegar</h2>
+          <h2>
+            <span class="material-icons">location_on</span>
+            {{ t('residentialPages.mariscal.map.title') }}
+          </h2>
           <div class="mapa-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.889482342654!2d-48.5066344145882!3d-27.18287208873959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1a0a1427e27%3A0xd380898d5dbf87f0!2sR.%20Jaboticabeira%2C%20194%20-%20Canto%20Grande%2C%20Bombinhas%20-%20SC%2C%2088215-000!5e0!3m2!1spt-BR!2sbr!4v1656954896594!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.889482342654!2d-48.5066344145882!3d-27.18287208873959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1a0a1427e27%3A0xd380898d5dbf87f0!2sR.%20Jaboticabeira%2C%20184%20-%20Canto%20Grande%2C%20Bombinhas%20-%20SC%2C%2088215-000!5e0!3m2!1spt-BR!2sbr!4v1656954896594!5m2!1spt-BR!2sbr"
               width="100%"
               height="450"
               style="border: 0"
@@ -122,9 +128,7 @@ const pontosProximos = [
             >
             </iframe>
           </div>
-          <p class="endereco">
-            Endereço: Rua Jabuticabeira 184, no bairro Canto Grande, Bombinhas/SC.
-          </p>
+          <p class="endereco">{{ t('residentialPages.mariscal.map.address') }}</p>
         </div>
       </div>
     </section>
@@ -132,14 +136,17 @@ const pontosProximos = [
     <section class="section-full-width cta-outer-section">
       <div class="container">
         <div class="acomodacoes-cta">
-          <h2><span class="material-icons">bed</span> Conheça Nossas Acomodações</h2>
+          <h2>
+            <span class="material-icons">bed</span>
+            {{ t('residentialPages.mariscal.accommodations.title') }}
+          </h2>
           <div class="cta-buttons">
-            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn"
-              >Apartamentos de 1 Dormitório</RouterLink
-            >
-            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn"
-              >Apartamentos de 2 Dormitórios</RouterLink
-            >
+            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn btn-modern">
+              {{ t('residentialPages.mariscal.accommodations.oneBedroom') }}
+            </RouterLink>
+            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn btn-modern">
+              {{ t('residentialPages.mariscal.accommodations.twoBedrooms') }}
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -385,6 +392,11 @@ const pontosProximos = [
 }
 
 @media (max-width: 768px) {
+  /* Aumentar padding lateral no mobile */
+  .section-full-width .container {
+    padding: 0 1.5rem;
+  }
+
   .section-full-width {
     padding: 2rem 0;
   }
@@ -421,6 +433,13 @@ const pontosProximos = [
   .cta-buttons .btn {
     width: 80%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .section-full-width .container {
+    padding: 0 2rem;
   }
 }
 </style>

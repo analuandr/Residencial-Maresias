@@ -1,124 +1,108 @@
 <script setup>
+import { computed } from 'vue'
 import AcomodacaoDisplay from '@/components/AcomodacaoDisplay.vue'
+import { useI18n } from 'vue-i18n'
 
-// Dados para o apartamento 101
-const ap101 = {
-  titulo: '101 – Térreo – 4 Pessoas',
-  capacidade: 'Acomoda até 4 pessoas',
+const { t } = useI18n()
+
+// Dados para o apartamento 201 - agora reativos
+const ap201 = computed(() => ({
+  titulo: t('apartments.mariscal.ap201.title'),
+  capacidade: t('apartments.mariscal.ap201.capacity'),
   itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala com Smart TV e Sofá cama',
-    'Dormitório com Cama Box Casal + Bicama',
-    'Ar-condicionado split no dormitório e na sala',
-    'Varanda com tanque e máquina de lavar',
-    'Ducha com aquecimento solar',
-    'Gás central',
-    'Churrasqueira interna',
-    'Estacionamento privativo 1 vaga',
+    t('accommodations.amenities.beachChairs'),
+    t('accommodations.amenities.umbrella'),
+    t('accommodations.amenities.bedding'),
+    t('accommodations.amenities.fullKitchen'),
+    t('accommodations.amenities.livingRoomTv'),
+    t('accommodations.amenities.doubleBedBunk'),
+    t('accommodations.amenities.airConditioningBedroomLiving'),
+    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.solarShower'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.internalGrill'),
+    t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 101/Foto 1.jpg',
-      alt: 'Foto do apartamento 101',
+      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 2.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 4.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 201/Quarto 201.JPG',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel77',
-}
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel76',
+  rotaInterna: '/acomodacoes/mariscal/1-dormitorio',
+}))
 
-// Dados para o apartamento 102
-const ap102 = {
-  titulo: '102 – Térreo – 4 Pessoas',
-  capacidade: 'Acomoda até 4 pessoas',
+// Dados para o apartamento 204 - agora reativos
+const ap204 = computed(() => ({
+  titulo: t('apartments.mariscal.ap204.title'),
+  capacidade: t('apartments.mariscal.ap204.capacity'),
   itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala com Smart TV e Sofá cama',
-    'Dormitório com Cama Box Casal + Bicama',
-    'Ar-condicionado split no dormitório e na sala',
-    'Varanda com tanque e máquina de lavar',
-    'Ducha com aquecimento solar',
-    'Gás central',
-    'Churrasqueira interna',
-    'Estacionamento privativo 1 vaga',
+    t('accommodations.amenities.beachChairs'),
+    t('accommodations.amenities.umbrella'),
+    t('accommodations.amenities.bedding'),
+    t('accommodations.amenities.fullKitchen'),
+    t('accommodations.amenities.livingRoomTv'),
+    t('accommodations.amenities.doubleBedBunk'),
+    t('accommodations.amenities.airConditioningBedroomLiving'),
+    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.solarShower'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.internalGrill'),
+    t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 102/Foto 1.jpg',
-      alt: 'Foto do apartamento 102',
+      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 1.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
-  ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel71',
-}
-
-// Dados para o apartamento 104
-const ap104 = {
-  titulo: '104 – Térreo – 4 pessoas',
-  capacidade: 'Acomoda até 4 pessoas',
-  itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala com Smart TV e Sofá cama',
-    'Dormitório com Cama Box Casal + Bicama',
-    'Ar-condicionado split no dormitório e na sala',
-    'Varanda com tanque e máquina de lavar',
-    'Ducha com aquecimento solar',
-    'Gás central',
-    'Churrasqueira interna',
-    'Estacionamento privativo 1 vaga',
-  ],
-  fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal 104/Foto 1.jpg',
-      alt: 'Foto do apartamento 104',
+      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 2.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel74',
-}
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel75',
+  rotaInterna: '/acomodacoes/mariscal/1-dormitorio',
+}))
 </script>
 
 <template>
   <div class="container">
     <div class="acomodacoes-header">
-      <h1>Acomodações em Mariscal - 1 Dormitório</h1>
-      <p>
-        Nossos apartamentos de 1 dormitório em Mariscal são confortáveis e completos, ideais para
-        casais ou pequenas famílias.
-      </p>
+      <h1>{{ t('accommodations.mariscal.oneBedroom.title') }}</h1>
+      <p>{{ t('accommodations.mariscal.oneBedroom.description') }}</p>
     </div>
 
     <AcomodacaoDisplay
-      :titulo="ap101.titulo"
-      :capacidade="ap101.capacidade"
-      :itens="ap101.itens"
-      :fotos="ap101.fotos"
-      :linkReserva="ap101.linkReserva"
+      :titulo="ap201.titulo"
+      :capacidade="ap201.capacidade"
+      :itens="ap201.itens"
+      :fotos="ap201.fotos"
+      :linkReserva="ap201.linkReserva"
+      :rotaInterna="ap201.rotaInterna"
     />
 
     <hr class="acomodacao-divider" />
 
     <AcomodacaoDisplay
-      :titulo="ap102.titulo"
-      :capacidade="ap102.capacidade"
-      :itens="ap102.itens"
-      :fotos="ap102.fotos"
-      :linkReserva="ap102.linkReserva"
-    />
-
-    <hr class="acomodacao-divider" />
-
-    <AcomodacaoDisplay
-      :titulo="ap104.titulo"
-      :capacidade="ap104.capacidade"
-      :itens="ap104.itens"
-      :fotos="ap104.fotos"
-      :linkReserva="ap104.linkReserva"
+      :titulo="ap204.titulo"
+      :capacidade="ap204.capacidade"
+      :itens="ap204.itens"
+      :fotos="ap204.fotos"
+      :linkReserva="ap204.linkReserva"
+      :rotaInterna="ap204.rotaInterna"
     />
   </div>
 </template>

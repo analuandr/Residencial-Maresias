@@ -1,67 +1,61 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 // Fotos da Casa Jaboticabeira
 const fotosJaboticabeira = [
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
-    caption: 'Fachada da Casa Jaboticabeira',
+    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+    caption: t('residentialPages.jaboticabeira.photos.facade'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
-    caption: 'Área externa da Casa',
+    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+    caption: t('residentialPages.jaboticabeira.photos.gourmetArea'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
-    caption: 'Área de lazer',
+    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+    caption: t('residentialPages.jaboticabeira.photos.masterSuite'),
   },
 ]
 
 // Informações de localização e pontos próximos
 const pontosProximos = [
   {
-    nome: 'Praia',
-    distancia: '400 metros',
-    descricao: 'Acesso facilitado a uma das mais belas praias da região.',
+    nome: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeFora.name'),
+    distancia: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeFora.distance'),
+    descricao: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeFora.description'),
   },
   {
-    nome: 'Mercado [Nome]',
-    distancia: '300 metros',
-    descricao: 'Mercado completo com tudo que você precisa para sua estadia.',
+    nome: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeDentro.name'),
+    distancia: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeDentro.distance'),
+    descricao: t('residentialPages.jaboticabeira.location.nearbyPoints.marDeDentro.description'),
   },
   {
-    nome: 'Restaurantes',
-    distancia: '350 metros',
-    descricao: 'Diversos restaurantes com gastronomia local e internacional.',
+    nome: t('residentialPages.jaboticabeira.location.nearbyPoints.market.name'),
+    distancia: t('residentialPages.jaboticabeira.location.nearbyPoints.market.distance'),
+    descricao: t('residentialPages.jaboticabeira.location.nearbyPoints.market.description'),
   },
   {
-    nome: 'Farmácia',
-    distancia: '450 metros',
-    descricao: 'Farmácia próxima para sua conveniência.',
+    nome: t('residentialPages.jaboticabeira.location.nearbyPoints.restaurants.name'),
+    distancia: t('residentialPages.jaboticabeira.location.nearbyPoints.restaurants.distance'),
+    descricao: t('residentialPages.jaboticabeira.location.nearbyPoints.restaurants.description'),
   },
-]
-
-// Características da Casa
-const caracteristicas = [
-  'Ampla área de lazer',
-  'Churrasqueira privativa',
-  'Jardim com área verde',
-  'Garagem para 2 carros',
-  'Sala de estar espaçosa',
-  'Cozinha completa',
-  'Internet Wi-Fi',
-  'Ar-condicionado em todos os quartos',
-  'Roupas de cama e banho incluídas',
-  'Itens de praia (guarda-sol, cadeiras)',
+  {
+    nome: t('residentialPages.jaboticabeira.location.nearbyPoints.center.name'),
+    distancia: t('residentialPages.jaboticabeira.location.nearbyPoints.center.distance'),
+    descricao: t('residentialPages.jaboticabeira.location.nearbyPoints.center.description'),
+  },
 ]
 </script>
 
 <template>
   <div class="container">
     <div class="residencial-header">
-      <h1><span class="material-icons">villa</span> Casa Jaboticabeira</h1>
-      <p>
-        Uma opção exclusiva para famílias ou grupos de amigos que buscam conforto, privacidade e
-        espaço em uma localização privilegiada.
-      </p>
+      <h1>
+        <span class="material-icons">villa</span> {{ t('residentialPages.jaboticabeira.title') }}
+      </h1>
+      <p>{{ t('residentialPages.jaboticabeira.subtitle') }}</p>
     </div>
 
     <div class="galeria-residencial">
@@ -73,67 +67,67 @@ const caracteristicas = [
 
     <div class="informacoes-section">
       <div class="info-column">
-        <h2><span class="material-icons">info</span> Sobre a Casa</h2>
-        <p>
-          A Casa Jaboticabeira é uma opção perfeita para famílias ou grupos de amigos que buscam uma
-          experiência única de hospedagem, com muito espaço e privacidade.
-        </p>
-        <p>
-          Com 3 dormitórios, a casa acomoda confortavelmente até 8 pessoas e conta com uma área de
-          lazer privativa com piscina e churrasqueira, ideal para momentos de descontração e
-          convivência.
-        </p>
-        <p>
-          Todos os ambientes são decorados com muito bom gosto e oferecem todo o conforto necessário
-          para tornar sua estadia inesquecível.
-        </p>
+        <h2>
+          <span class="material-icons">info</span>
+          {{ t('residentialPages.jaboticabeira.about.title') }}
+        </h2>
+        <p>{{ t('residentialPages.jaboticabeira.about.paragraph1') }}</p>
+        <p>{{ t('residentialPages.jaboticabeira.about.paragraph2') }}</p>
+        <p>{{ t('residentialPages.jaboticabeira.about.paragraph3') }}</p>
+        <p>{{ t('residentialPages.jaboticabeira.about.paragraph4') }}</p>
       </div>
 
       <div class="info-column">
-        <h2><span class="material-icons">featured_play_list</span> Características</h2>
-        <ul class="caracteristicas-lista">
-          <li v-for="(item, index) in caracteristicas" :key="index">{{ item }}</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="informacoes-section">
-      <div class="info-column">
-        <h2><span class="material-icons">hotel</span> Acomodações</h2>
-        <div class="acomodacoes-info">
-          <div class="acomodacao-item">
-            <h3>Suíte Master</h3>
-            <p>Quarto com cama Queen size, banheiro privativo e amplo espaço.</p>
-          </div>
-          <div class="acomodacao-item">
-            <h3>Dormitório 2</h3>
-            <p>Quarto com cama de casal e armário.</p>
-          </div>
-          <div class="acomodacao-item">
-            <h3>Dormitório 3</h3>
-            <p>Quarto com duas camas de solteiro, ideal para crianças ou adolescentes.</p>
-          </div>
-          <div class="acomodacao-item">
-            <h3>Sala de Estar</h3>
-            <p>Ampla sala com sofá, TV e espaço para convivência.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="info-column">
-        <h2><span class="material-icons">signpost</span> Localização e Arredores</h2>
+        <h2>
+          <span class="material-icons">signpost</span>
+          {{ t('residentialPages.jaboticabeira.location.title') }}
+        </h2>
         <div class="pontos-proximos">
           <div v-for="(ponto, index) in pontosProximos" :key="index" class="ponto-item">
             <h3><span class="material-icons">place</span> {{ ponto.nome }}</h3>
-            <p class="distancia">Distância: {{ ponto.distancia }}</p>
+            <p class="distancia">{{ t('general.distance') }}: {{ ponto.distancia }}</p>
             <p>{{ ponto.descricao }}</p>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="informacoes-section">
+      <div class="info-column">
+        <h2>
+          <span class="material-icons">hotel</span>
+          {{ t('residentialPages.jaboticabeira.accommodationsDetail.title') }}
+        </h2>
+        <div class="acomodacoes-info">
+          <div class="acomodacao-item">
+            <h3>
+              {{ t('residentialPages.jaboticabeira.accommodationsDetail.masterSuite.title') }}
+            </h3>
+            <p>
+              {{ t('residentialPages.jaboticabeira.accommodationsDetail.masterSuite.description') }}
+            </p>
+          </div>
+          <div class="acomodacao-item">
+            <h3>{{ t('residentialPages.jaboticabeira.accommodationsDetail.suite.title') }}</h3>
+            <p>{{ t('residentialPages.jaboticabeira.accommodationsDetail.suite.description') }}</p>
+          </div>
+          <div class="acomodacao-item">
+            <h3>{{ t('residentialPages.jaboticabeira.accommodationsDetail.bedroom.title') }}</h3>
+            <p>
+              {{ t('residentialPages.jaboticabeira.accommodationsDetail.bedroom.description1') }}
+            </p>
+            <p>
+              {{ t('residentialPages.jaboticabeira.accommodationsDetail.bedroom.description2') }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="mapa-section">
-      <h2><span class="material-icons">map</span> Como Chegar</h2>
+      <h2>
+        <span class="material-icons">map</span> {{ t('residentialPages.jaboticabeira.map.title') }}
+      </h2>
       <div class="mapa-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.889482342654!2d-48.5066344145882!3d-27.18287208873959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1a0a1427e27%3A0xd380898d5dbf87f0!2sR.%20Jaboticabeira%2C%20194%20-%20Canto%20Grande%2C%20Bombinhas%20-%20SC%2C%2088215-000!5e0!3m2!1spt-BR!2sbr!4v1656954896594!5m2!1spt-BR!2sbr"
@@ -146,21 +140,24 @@ const caracteristicas = [
         >
         </iframe>
       </div>
-      <p class="endereco">Endereço: Rua Jabuticabeira 194, no bairro Canto Grande, Bombinhas/SC.</p>
+      <p class="endereco">{{ t('residentialPages.jaboticabeira.map.address') }}</p>
     </div>
 
     <div class="acomodacoes-cta">
-      <h2><span class="material-icons">visibility</span> Conheça em Detalhes</h2>
+      <h2>
+        <span class="material-icons">visibility</span>
+        {{ t('residentialPages.jaboticabeira.cta.title') }}
+      </h2>
       <div class="cta-buttons">
-        <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="btn"
-          >Ver Detalhes e Fotos</RouterLink
-        >
+        <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="btn btn-modern">{{
+          t('residentialPages.jaboticabeira.cta.button')
+        }}</RouterLink>
         <a
           href="https://www.joaoimoveis.com.br/pt/imovel906"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline"
-          >Verificar Disponibilidade</a
+          >{{ t('actions.checkAvailability') }}</a
         >
       </div>
     </div>
@@ -252,16 +249,6 @@ const caracteristicas = [
 
 .info-column p {
   margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.caracteristicas-lista {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
-.caracteristicas-lista li {
-  margin-bottom: 0.5rem;
   line-height: 1.6;
 }
 
@@ -372,13 +359,54 @@ const caracteristicas = [
 }
 
 @media (max-width: 768px) {
+  /* Aumentar padding lateral no mobile */
+  .section-full-width .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-full-width {
+    padding: 2rem 0;
+  }
+
+  .residencial-header h1 {
+    font-size: 2rem;
+  }
+
+  .galeria-residencial {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
   .informacoes-section {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .info-column h2 {
+    font-size: 1.6rem;
+  }
+
+  .mapa-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .acomodacoes-cta h2 {
+    font-size: 1.6rem;
   }
 
   .cta-buttons {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+  }
+  .cta-buttons .btn {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .section-full-width .container {
+    padding: 0 2rem;
   }
 }
 </style>

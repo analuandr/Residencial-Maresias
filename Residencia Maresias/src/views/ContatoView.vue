@@ -1,36 +1,40 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 // Dados de contato
 const contatosResidenciais = [
   {
-    nome: 'Residencial Maresias Bombas',
-    endereco: 'Rua Tiriba, N°: 54 - Passarela do Ribeiro - Bombas, Bombinhas - SC, Brasil',
-    telefones: ['(XX) XXXX-XXXX', '(XX) XXXX-XXXX'],
-    email: 'contato@residencialmaresias.com.br',
-    imobiliaria: 'Marcos Imóveis',
-    imobiliariaContato: '(XX) XXXX-XXXX',
-    imobiliariaSite: 'marcosimoveis.com.br',
-    codigoPesquisa: 'Buscar por "Residencial Maresias Bombas"',
+    nome: t('contact.residentials.bombas'),
+    endereco: 'Rua Tiriba, 54 - Bombas, Bombinhas - SC',
+    telefoneFixo: '+55 (47) 3369 0101',
+    whatsapp: '+55 (47) 3170 3551',
+    email: 'atendimento@marcosimoveis.com.br',
+    codigoPesquisa: 'L092; L093; L094; L095',
+    emailSubject: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Bombas',
+    whatsappMessage: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Bombas',
   },
   {
-    nome: 'Residencial Maresias Mariscal',
-    endereco: 'Rua Jabuticabeira 184, no bairro Canto Grande, Bombinhas/SC.',
-    telefones: ['(XX) XXXX-XXXX', '(XX) XXXX-XXXX'],
-    email: 'contato@residencialmaresias.com.br',
-    imobiliaria: 'João Imóveis',
-    imobiliariaContato: '(XX) XXXX-XXXX',
-    imobiliariaSite: 'joaoimoveis.com.br',
-    codigoPesquisa:
-      'Buscar por "Residencial Maresias Mariscal" ou códigos 77, 71, 74, 343, 375, 617',
+    nome: t('contact.residentials.mariscal'),
+    endereco: 'Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+    telefoneFixo: '+55 (47) 3393 3220',
+    whatsapp: '+55 (47) 99669 0082',
+    email: 'contato@joaoimoveis.com.br',
+    codigoPesquisa: 'Códigos 77, 71, 74, 343, 375, 617',
+    emailSubject: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Canto Grande',
+    whatsappMessage:
+      'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Canto Grande',
   },
   {
-    nome: 'Casa Jaboticabeira',
-    endereco: 'Rua Jabuticabeira 194, no bairro Canto Grande, Bombinhas/SC.',
-    telefones: ['(XX) XXXX-XXXX', '(XX) XXXX-XXXX'],
-    email: 'contato@residencialmaresias.com.br',
-    imobiliaria: 'João Imóveis',
-    imobiliariaContato: '(XX) XXXX-XXXX',
-    imobiliariaSite: 'joaoimoveis.com.br/pt/imovel906',
-    codigoPesquisa: 'Código 906',
+    nome: t('contact.residentials.jaboticabeira'),
+    endereco: 'Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+    telefoneFixo: '+55 (47) 3393 3220',
+    whatsapp: '+55 (47) 99669 0082',
+    email: 'contato@joaoimoveis.com.br',
+    codigoPesquisa: 'Casa Jaboticabeira Cód 906',
+    emailSubject: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira Cód 906',
+    whatsappMessage: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira Cód 906',
   },
 ]
 </script>
@@ -40,11 +44,8 @@ const contatosResidenciais = [
     <section class="section-full-width contato-header-section">
       <div class="container">
         <div class="contato-header">
-          <h1><span class="material-icons">headset_mic</span> Entre em Contato</h1>
-          <p>
-            Para reservas ou mais informações sobre os nossos residenciais, entre em contato
-            conosco.
-          </p>
+          <h1><span class="material-icons">headset_mic</span> {{ t('contact.title') }}</h1>
+          <p>{{ t('contact.description') }}</p>
         </div>
       </div>
     </section>
@@ -57,36 +58,53 @@ const contatosResidenciais = [
 
             <div class="contato-info">
               <div class="info-item">
-                <h3><span class="material-icons">place</span> Endereço:</h3>
+                <h3>
+                  <span class="material-icons">place</span> {{ t('contact.fields.address') }}:
+                </h3>
                 <p>{{ contato.endereco }}</p>
               </div>
 
               <div class="info-item">
-                <h3><span class="material-icons">call</span> Telefones:</h3>
-                <p v-for="(telefone, i) in contato.telefones" :key="i">{{ telefone }}</p>
+                <h3><span class="material-icons">call</span> {{ t('contact.fields.phone') }}:</h3>
+                <p>
+                  <a :href="'tel:' + contato.telefoneFixo">{{ contato.telefoneFixo }}</a>
+                </p>
               </div>
 
               <div class="info-item">
-                <h3><span class="material-icons">email</span> Email:</h3>
-                <p>{{ contato.email }}</p>
-              </div>
-
-              <div class="info-item imobiliaria-info">
-                <h3><span class="material-icons">real_estate_agent</span> Reservas através de:</h3>
+                <h3>
+                  <span class="material-icons">chat</span> {{ t('contact.fields.whatsapp') }}:
+                </h3>
                 <p>
-                  <strong>{{ contato.imobiliaria }}</strong>
-                </p>
-                <p>Telefone: {{ contato.imobiliariaContato }}</p>
-                <p>
-                  Site:
                   <a
-                    :href="'https://' + contato.imobiliariaSite"
+                    :href="
+                      'https://wa.me/' +
+                      contato.whatsapp.replace(/[^\d]/g, '') +
+                      '?text=' +
+                      contato.whatsappMessage
+                    "
                     target="_blank"
                     rel="noopener noreferrer"
-                    >{{ contato.imobiliariaSite }}</a
                   >
+                    {{ contato.whatsapp }}
+                  </a>
                 </p>
-                <p>Código de pesquisa: {{ contato.codigoPesquisa }}</p>
+              </div>
+
+              <div class="info-item">
+                <h3><span class="material-icons">email</span> {{ t('contact.fields.email') }}:</h3>
+                <p>
+                  <a :href="'mailto:' + contato.email + '?subject=' + contato.emailSubject">
+                    {{ contato.email }}
+                  </a>
+                </p>
+              </div>
+
+              <div class="info-item">
+                <h3>
+                  <span class="material-icons">search</span> {{ t('contact.fields.searchCode') }}:
+                </h3>
+                <p>{{ contato.codigoPesquisa }}</p>
               </div>
             </div>
           </div>
@@ -353,6 +371,39 @@ const contatosResidenciais = [
 
   .contato-header h1 {
     font-size: 2rem;
+  }
+
+  /* Aumentar padding lateral no mobile */
+  .section-full-width .container {
+    padding: 0 1.5rem;
+  }
+
+  .contato-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contato-form {
+    order: 2;
+  }
+
+  .contato-info {
+    order: 1;
+  }
+
+  .contato-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .mapa-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .section-full-width .container {
+    padding: 0 2rem;
   }
 }
 </style>

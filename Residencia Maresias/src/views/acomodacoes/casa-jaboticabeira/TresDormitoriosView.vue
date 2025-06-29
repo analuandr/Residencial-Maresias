@@ -1,72 +1,79 @@
 <script setup>
+import { computed } from 'vue'
 import AcomodacaoDisplay from '@/components/AcomodacaoDisplay.vue'
+import { useI18n } from 'vue-i18n'
 
-// Dados da Casa Jaboticabeira
-const casaJaboticabeira = {
-  titulo: 'Casa Jaboticabeira - 3 Dormitórios',
-  capacidade: 'Acomoda até 8 pessoas',
+const { t } = useI18n()
+
+// Dados para a Casa Jaboticabeira - agora reativos
+const casaJaboticabeira = computed(() => ({
+  titulo: t('apartments.jaboticabeira.house.title'),
+  capacidade: t('apartments.jaboticabeira.house.capacity'),
   itens: [
-    'Cadeiras de praia',
-    'Guarda sol',
-    'Roupa de cama',
-    'Cozinha completa com utensílios e micro ondas',
-    'Sala ampla com Smart TV e Sofá',
-    'Suíte Master com Cama Box Queen',
-    'Dormitório 2 com Cama Box Casal',
-    'Dormitório 3 com 2 Camas Box Solteiro',
-    'Ar-condicionado split nos 3 dormitórios',
-    'Lavanderia com tanque e máquina de lavar',
-    'Duchas com aquecimento solar',
-    'Área de lazer externa',
-    'Churrasqueira',
-    'Garagem para 2 carros',
+    t('accommodations.amenities.beachChairs'),
+    t('accommodations.amenities.umbrella'),
+    t('accommodations.amenities.bedding'),
+    t('accommodations.amenities.fullKitchen'),
+    t('accommodations.amenities.largeLivingRoom'),
+    t('accommodations.amenities.masterSuite'),
+    t('accommodations.amenities.doubleBed'),
+    t('accommodations.amenities.singleBedroomBunk'),
+    t('accommodations.amenities.airConditioningThreeBedrooms'),
+    t('accommodations.amenities.laundryWashing'),
+    t('accommodations.amenities.garage2Cars'),
+    t('accommodations.amenities.outdoorArea'),
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
-      alt: 'Vista principal da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Área Gourmet Casa.jpg',
+      alt: t('photoCaption.houseMain'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
-      alt: 'Foto da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Suite Master Casa.jpg',
+      alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
-      alt: 'Foto da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+      alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
-      alt: 'Foto da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+      alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
-      alt: 'Foto da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+      alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
-      alt: 'Foto da Casa Jaboticabeira',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
+      alt: t('photoCaption.housePhoto'),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
+      alt: t('photoCaption.housePhoto'),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
+      alt: t('photoCaption.housePhoto'),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Fachada do Residencial Mariscal.JPG',
+      alt: t('photoCaption.housePhoto'),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel906',
-}
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel74',
+}))
 </script>
 
 <template>
   <div class="container">
     <div class="acomodacoes-header">
-      <h1>Casa Jaboticabeira</h1>
-      <p>
-        Nossa Casa Jaboticabeira oferece amplo espaço e conforto para até 8 pessoas, com 3
-        dormitórios, área de lazer e todas as comodidades para uma estadia perfeita.
-      </p>
+      <h1>{{ t('accommodations.jaboticabeira.threeBedrooms.title') }}</h1>
+      <p>{{ t('accommodations.jaboticabeira.threeBedrooms.description') }}</p>
     </div>
 
     <div class="casa-info">
-      <p>
-        A Casa Jaboticabeira é a opção ideal para grupos ou famílias maiores que buscam espaço,
-        privacidade e conforto durante sua estadia. Localizada em uma área tranquila e privilegiada,
-        permite que você desfrute de momentos especiais com sua família e amigos.
-      </p>
+      <p>{{ t('accommodations.jaboticabeira.info') }}</p>
     </div>
 
     <AcomodacaoDisplay

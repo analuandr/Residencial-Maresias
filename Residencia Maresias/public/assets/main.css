@@ -200,6 +200,11 @@ section {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  /* Aumentar padding lateral no mobile para melhor espaçamento */
+  .container {
+    padding: 0 1.5rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -210,5 +215,12 @@ section {
 
   h3 {
     font-size: 1.3rem;
+  }
+}
+
+/* Para telas muito pequenas (smartphones pequenos) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 2rem;
   }
 }

@@ -62,5 +62,29 @@
   .about-section h1 {
     font-size: 2rem;
   }
+  /* Aumentar padding lateral no mobile */
+  .section-full-width .container {
+    padding: 0 1.5rem;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+  .section-full-width .container {
+    padding: 0 2rem;
+  }
 }
 </style>

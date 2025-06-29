@@ -1,10 +1,15 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import LanguageSelector from './LanguageSelector.vue'
+
+const { t } = useI18n()
 
 const showSubmenuResidencial = ref(false)
 const showSubmenuAcomodacoes = ref(false)
 const showSubmenuPraias = ref(false)
+const showSubmenuReservar = ref(false)
 const isScrolled = ref(false)
 const headerHeight = ref(0)
 
@@ -41,31 +46,31 @@ onUnmounted(() => {
   <header class="header-container" :class="{ scrolled: isScrolled }">
     <div class="beach-header-bg">
       <div class="beach-overlay">
+        <div class="language-selector-container">
+          <LanguageSelector />
+        </div>
         <div class="logo-container">
           <RouterLink to="/" class="logo-link">
-            <!-- Logo Inicial Removido -->
             <div class="brand-content">
-              <h1 class="main-title">Residencial Maresias</h1>
+              <div class="logo-section">
+                <img src="/logo.png" alt="Logo Residencial Maresias" class="main-logo" />
+              </div>
+              <h1 class="main-title">{{ t('home.title') }}</h1>
               <div class="sub-brands">
-                <div class="sub-brand">Bombas</div>
-                <div class="sub-brand">Mariscal</div>
-                <div class="sub-brand">Casa Jaboticabeira</div>
+                <RouterLink to="/residencial/bombas" class="sub-brand">{{
+                  t('footer.locations.bombas')
+                }}</RouterLink>
+                <RouterLink to="/residencial/mariscal" class="sub-brand">{{
+                  t('footer.locations.mariscal')
+                }}</RouterLink>
+                <RouterLink to="/residencial/casa-jaboticabeira" class="sub-brand">{{
+                  t('footer.locations.jaboticabeira')
+                }}</RouterLink>
               </div>
             </div>
           </RouterLink>
         </div>
       </div>
-
-      <!-- Efeito de onda -->
-      <!-- <div class="wave-divider" v-if="!isScrolled">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-          <path
-            fill="#000000"
-            fill-opacity="1"
-            d="M0,64L48,69.3C96,75,192,85,288,90.7C384,96,480,96,576,85.3C672,75,768,53,864,48C960,43,1056,53,1152,69.3C1248,85,1344,107,1392,117.3L1440,128L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
-          ></path>
-        </svg>
-      </div> -->
     </div>
 
     <nav class="main-nav" :class="{ 'nav-scrolled': isScrolled }">
@@ -75,13 +80,6 @@ onUnmounted(() => {
           <img src="/logo.png" alt="Logo Maresias" class="nav-logo" />
         </RouterLink>
 
-        <!-- Botão do menu mobile -->
-        <button class="mobile-menu-toggle" @click="toggleMobileMenu" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
         <div class="nav-links-container">
           <div class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
             <div
@@ -89,17 +87,22 @@ onUnmounted(() => {
               @mouseenter="showSubmenuResidencial = true"
               @mouseleave="showSubmenuResidencial = false"
             >
-              <span class="nav-link"><span class="material-icons">home</span> O Residencial</span>
+              <RouterLink to="/residencial" class="nav-link">
+                <span class="material-icons">home</span> {{ t('nav.residential') }}
+              </RouterLink>
               <div class="submenu" v-if="showSubmenuResidencial">
-                <RouterLink to="/residencial/bombas" class="submenu-item"
-                  ><span class="material-icons">location_on</span> Bombas</RouterLink
-                >
-                <RouterLink to="/residencial/mariscal" class="submenu-item"
-                  ><span class="material-icons">location_on</span> Mariscal</RouterLink
-                >
-                <RouterLink to="/residencial/casa-jaboticabeira" class="submenu-item"
-                  ><span class="material-icons">house</span> Casa Jaboticabeira</RouterLink
-                >
+                <RouterLink to="/residencial/bombas" class="submenu-item">
+                  <span class="material-icons">apartment</span>
+                  {{ t('footer.locations.bombas') }}
+                </RouterLink>
+                <RouterLink to="/residencial/mariscal" class="submenu-item">
+                  <span class="material-icons">apartment</span>
+                  {{ t('footer.locations.mariscal') }}
+                </RouterLink>
+                <RouterLink to="/residencial/casa-jaboticabeira" class="submenu-item">
+                  <span class="material-icons">house</span>
+                  {{ t('footer.locations.jaboticabeira') }}
+                </RouterLink>
               </div>
             </div>
 
@@ -108,34 +111,41 @@ onUnmounted(() => {
               @mouseenter="showSubmenuAcomodacoes = true"
               @mouseleave="showSubmenuAcomodacoes = false"
             >
-              <span class="nav-link"><span class="material-icons">bed</span> Acomodações</span>
+              <span class="nav-link">
+                <span class="material-icons">bed</span> {{ t('nav.accommodations') }}
+              </span>
               <div class="submenu" v-if="showSubmenuAcomodacoes">
                 <div class="submenu-category">
-                  <span class="material-icons">location_on</span> Bombas
+                  <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
                 </div>
-                <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="submenu-item"
-                  ><span class="material-icons">bed</span> 1 Dormitório</RouterLink
-                >
-                <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="submenu-item"
-                  ><span class="material-icons">hotel</span> 2 Dormitórios</RouterLink
-                >
+                <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="submenu-item">
+                  <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
+                </RouterLink>
+                <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="submenu-item">
+                  <span class="material-icons">hotel</span>
+                  {{ t('actions.twoBedrooms') }}
+                </RouterLink>
 
                 <div class="submenu-category">
-                  <span class="material-icons">location_on</span> Mariscal
+                  <span class="material-icons">location_on</span>
+                  {{ t('footer.locations.mariscal') }}
                 </div>
-                <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="submenu-item"
-                  ><span class="material-icons">bed</span> 1 Dormitório</RouterLink
-                >
-                <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="submenu-item"
-                  ><span class="material-icons">hotel</span> 2 Dormitórios</RouterLink
-                >
+                <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="submenu-item">
+                  <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
+                </RouterLink>
+                <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="submenu-item">
+                  <span class="material-icons">hotel</span>
+                  {{ t('actions.twoBedrooms') }}
+                </RouterLink>
 
                 <div class="submenu-category">
-                  <span class="material-icons">house</span> Casa Jaboticabeira
+                  <span class="material-icons">house</span>
+                  {{ t('footer.locations.jaboticabeira') }}
                 </div>
-                <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="submenu-item"
-                  ><span class="material-icons">bedroom_parent</span> 3 Dormitórios</RouterLink
-                >
+                <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="submenu-item">
+                  <span class="material-icons">bedroom_parent</span> 3
+                  {{ t('nav.accommodations') }}
+                </RouterLink>
               </div>
             </div>
 
@@ -144,26 +154,78 @@ onUnmounted(() => {
               @mouseenter="showSubmenuPraias = true"
               @mouseleave="showSubmenuPraias = false"
             >
-              <span class="nav-link"
-                ><span class="material-icons">beach_access</span> As Praias</span
-              >
+              <span class="nav-link">
+                <span class="material-icons">beach_access</span> {{ t('nav.beaches') }}
+              </span>
               <div class="submenu" v-if="showSubmenuPraias">
-                <RouterLink to="/praias/bombas" class="submenu-item"
-                  ><span class="material-icons">beach_access</span> Bombas</RouterLink
-                >
-                <RouterLink to="/praias/mariscal" class="submenu-item"
-                  ><span class="material-icons">beach_access</span> Mariscal</RouterLink
-                >
+                <RouterLink to="/praias/bombas" class="submenu-item">
+                  <span class="material-icons">waves</span>
+                  {{ t('footer.locations.bombas') }}
+                </RouterLink>
+                <RouterLink to="/praias/mariscal" class="submenu-item">
+                  <span class="material-icons">waves</span>
+                  {{ t('footer.locations.mariscal') }}
+                </RouterLink>
               </div>
             </div>
 
             <div class="nav-item">
-              <RouterLink to="/contato" class="nav-link"
-                ><span class="material-icons">email</span> Contato</RouterLink
-              >
+              <RouterLink to="/contato" class="nav-link">
+                <span class="material-icons">email</span> {{ t('nav.contact') }}
+              </RouterLink>
+            </div>
+
+            <div
+              class="nav-item"
+              @mouseenter="showSubmenuReservar = true"
+              @mouseleave="showSubmenuReservar = false"
+            >
+              <span class="nav-link btn-reservar">
+                <span class="material-icons">calendar_today</span> {{ t('nav.reserve') }}
+              </span>
+              <div class="submenu" v-if="showSubmenuReservar">
+                <div class="submenu-category">
+                  <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
+                </div>
+                <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="submenu-item">
+                  <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
+                </RouterLink>
+                <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="submenu-item">
+                  <span class="material-icons">hotel</span>
+                  {{ t('actions.twoBedrooms') }}
+                </RouterLink>
+
+                <div class="submenu-category">
+                  <span class="material-icons">location_on</span>
+                  {{ t('footer.locations.mariscal') }}
+                </div>
+                <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="submenu-item">
+                  <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
+                </RouterLink>
+                <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="submenu-item">
+                  <span class="material-icons">hotel</span>
+                  {{ t('actions.twoBedrooms') }}
+                </RouterLink>
+
+                <div class="submenu-category">
+                  <span class="material-icons">house</span>
+                  {{ t('footer.locations.jaboticabeira') }}
+                </div>
+                <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="submenu-item">
+                  <span class="material-icons">bedroom_parent</span> 3
+                  {{ t('nav.accommodations') }}
+                </RouterLink>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Botão do menu mobile -->
+        <button class="mobile-menu-toggle" @click="toggleMobileMenu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -181,6 +243,7 @@ onUnmounted(() => {
   background-position: center;
   height: 350px;
   width: 100%;
+  position: relative;
 }
 
 .beach-overlay {
@@ -190,111 +253,102 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-/* Estilos para o wave divider */
-.wave-divider {
+.language-selector-container {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-bottom: -1px; /* Elimina qualquer espaço entre a onda e o menu */
-  z-index: 5;
-  line-height: 0;
-  overflow: hidden;
-}
-
-.wave-divider svg {
-  width: 100%;
-  height: 70px;
-  display: block;
-}
-
-.wave-divider path {
-  fill: #000000; /* Cor preta para o preenchimento da onda */
+  top: 20px;
+  right: 20px;
+  z-index: 10;
 }
 
 .logo-container {
   text-align: center;
-  padding: 1rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.logo-link {
-  text-decoration: none;
-}
-
-/* Estilos do Logo */
-.header-logo {
-  transition: all 0.3s ease;
-}
-
-.initial-logo {
-  display: block;
-  max-height: 80px; /* Ajuste a altura conforme necessário */
-  margin: 0 auto 1rem; /* Centralizado acima do texto */
-}
-
-.scrolled-logo {
-  display: block;
-  max-height: 65px; /* Logo menor na barra fixa */
-  margin-right: auto; /* Empurra para a esquerda */
 }
 
 .brand-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.logo-section {
+  margin-bottom: 1rem;
+}
+
+.main-logo {
+  height: 80px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .main-title {
   font-size: 3.5rem;
-  font-weight: bold;
-  margin: 0;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.6);
   font-family: var(--title-font);
+  font-weight: 700;
+  color: #fff;
 }
 
 .sub-brands {
   display: flex;
+  justify-content: center;
   gap: 2rem;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 300;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  font-family: var(--body-font);
+  margin-top: 1rem;
+}
+
+.sub-brand {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+}
+
+.sub-brand:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  color: #fff;
+  text-decoration: none;
 }
 
 .main-nav {
-  background-color: black;
-  color: white;
-  padding: 0;
-  position: relative;
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   transition: all 0.3s ease;
-  width: 100%;
 }
 
 .nav-scrolled {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  position: relative;
-  padding: 0 1rem;
-  width: 100%;
-  max-width: 100%;
+  padding: 1rem;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .nav-links-container {
@@ -305,8 +359,8 @@ onUnmounted(() => {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
-  padding: 1rem 0;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-item {
@@ -314,115 +368,80 @@ onUnmounted(() => {
 }
 
 .nav-link {
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
+  color: #fff;
   text-decoration: none;
-  padding: 0.5rem 0;
-  cursor: pointer;
-  position: relative;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  font-family: var(--body-font);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Estilos para os ícones no menu principal */
-.nav-link .material-icons {
-  margin-right: 6px;
-  font-size: 1.2rem;
-  color: var(--accent-color);
-  transition: transform 0.3s ease;
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav-link:hover .material-icons {
-  transform: translateY(-2px);
+.btn-reservar {
+  background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav-link:after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-color);
-  transition: width 0.3s;
-}
-
-.nav-link:hover:after,
-.router-link-active:after {
-  width: 100%;
-}
-
-.reservar {
-  color: var(--accent-color);
-  font-weight: 700;
+.btn-reservar:hover {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .submenu {
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  min-width: 200px;
-  border-radius: 4px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 0.3s ease;
+  left: 0;
+  background: #fff;
+  min-width: 250px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .submenu-category {
-  font-weight: bold;
   padding: 0.5rem 1rem;
+  font-weight: 600;
   color: var(--primary-color);
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
-  font-family: var(--body-font);
-}
-
-/* Estilos para os ícones nas categorias do submenu */
-.submenu-category .material-icons {
-  margin-right: 6px;
-  color: var(--primary-color);
-  font-size: 1.1rem;
+  gap: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .submenu-item {
-  padding: 0.5rem 1.5rem;
-  color: var(--dark-color);
-  text-decoration: none;
-  transition: all 0.2s;
-  position: relative;
   display: flex;
   align-items: center;
-  font-family: var(--body-font);
-}
-
-/* Estilos para os ícones nos itens do submenu */
-.submenu-item .material-icons {
-  margin-right: 8px;
-  font-size: 1rem;
-  color: var(--secondary-color);
-  width: 20px;
-  text-align: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--dark-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .submenu-item:hover {
-  background-color: rgba(77, 182, 172, 0.1);
-  color: var(--secondary-color);
-}
-
-.submenu-item:hover .material-icons {
+  background-color: var(--beach-bg-light);
   color: var(--primary-color);
 }
 
@@ -431,107 +450,139 @@ onUnmounted(() => {
   background: none;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 20px;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 101;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  margin-left: auto;
 }
 
 .mobile-menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
-}
-
-/* Logo na Navegação Direita */
-.nav-logo-link {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  margin-right: 1rem;
-  position: absolute;
-}
-
-.nav-logo {
-  max-height: 65px;
-  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
-  .beach-header-bg {
-    height: 180px;
-  }
-
   .main-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .sub-brands {
-    font-size: 1rem;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  }
+
+  .main-logo {
+    height: 60px;
   }
 
   .mobile-menu-toggle {
-    display: block;
-    order: 3;
-    position: static;
-    transform: none;
-    margin-left: auto;
+    display: flex;
+    z-index: 1002;
   }
 
   .nav-links-container {
-    order: 2;
-    flex-grow: 0;
+    position: relative;
   }
 
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4rem 1.5rem 2rem;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
     display: none;
   }
 
   .nav-links.mobile-open {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
     display: flex;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 80%;
-    height: calc(100vh - 60px);
-    flex-direction: column;
-    background-color: white;
-    padding: 1rem;
-    gap: 0.5rem;
-    transition: left 0.3s ease-in-out;
-    overflow-y: auto;
-    z-index: 100;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-link {
+    width: 100%;
     justify-content: flex-start;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
   }
 
-  .nav-logo {
-    max-height: 35px;
+  .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .nav-logo-link {
-    order: 1;
-    margin-right: 0;
+  .submenu-item {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .submenu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .submenu-category {
+    color: var(--accent-color);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px) translateX(-50%);
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateX(-50%);
+
+  .main-logo {
+    height: 50px;
   }
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 </style>

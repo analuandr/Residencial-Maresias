@@ -8,11 +8,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig(({ mode }) => {
   return {
     plugins: [vue(), vueDevTools()],
-    // Configuração para funcionar tanto no GitHub Pages quanto no domínio personalizado
-    base:
-      mode === 'production'
-        ? '/Residencial-Maresias/' // Para GitHub Pages padrão
-        : '/', // Para desenvolvimento local
+    // Configuração para domínio personalizado
+    base: mode === 'production' ? '/' : '/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),

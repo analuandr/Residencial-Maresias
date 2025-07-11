@@ -6,15 +6,15 @@ const { t } = useI18n()
 // Fotos do residencial em Bombas
 const fotosBombas = [
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Fachada Residencial Bombas.jpg',
+    url: '/assets/Fotos Site Bombas/Fachada Residencial Bombas.jpg',
     caption: t('residentialPages.bombas.photos.facade'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Exterior e Vista Bombas.jpg',
+    url: '/assets/Fotos Site Bombas/Exterior e Vista Bombas.jpg',
     caption: t('residentialPages.bombas.photos.exterior'),
   },
   {
-    url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
+    url: '/assets/Fotos Site Bombas/Bombas 101/Foto 1.jpg',
     caption: t('residentialPages.bombas.photos.terrace'),
   },
 ]

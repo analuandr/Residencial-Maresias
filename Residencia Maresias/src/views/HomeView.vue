@@ -7,19 +7,19 @@ const { t } = useI18n()
 // Dados para o carrossel
 const carouselSlides = [
   {
-    image: '/Residencial-Maresias/assets/Canto Grande/Exterior Canto Grande.jpg',
+    image: '/assets/Canto Grande/Exterior Canto Grande.jpg',
     title: t('home.carousel.canto_grande.title'),
     description: t('home.carousel.canto_grande.description'),
     link: '/residencial/mariscal',
   },
   {
-    image: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+    image: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
     title: t('home.carousel.jaboticabeira.title'),
     description: t('home.carousel.jaboticabeira.description'),
     link: '/residencial/casa-jaboticabeira',
   },
   {
-    image: '/Residencial-Maresias/assets/Fotos Site Bombas/Fachada Residencial Bombas.jpg',
+    image: '/assets/Fotos Site Bombas/Fachada Residencial Bombas.jpg',
     title: t('home.carousel.mariscal.title'),
     description: t('home.carousel.mariscal.description'),
     link: '/residencial/bombas',

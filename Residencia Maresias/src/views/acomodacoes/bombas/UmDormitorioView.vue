@@ -24,19 +24,19 @@ const ap201 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 3.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 201/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
   ],
@@ -63,19 +63,19 @@ const ap202 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 3.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
+      url: '/assets/Fotos Site Bombas/Bombas 202/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
   ],

@@ -26,39 +26,39 @@ const casaJaboticabeira = computed(() => ({
   ],
   fotos: [
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Área Gourmet Casa.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Área Gourmet Casa.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Suite Master Casa.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Suite Master Casa.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 04.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 05.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
       alt: t('photoCaption.housePhoto'),
     },
     {
-      url: '/Residencial-Maresias/assets/Fotos Site Mariscal/Mariscal Casa/Fachada do Residencial Mariscal.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Fachada do Residencial Mariscal.JPG',
       alt: t('photoCaption.housePhoto'),
     },
   ],

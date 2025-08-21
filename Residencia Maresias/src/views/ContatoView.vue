@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { RouterLink } from 'vue-router'
 
 const { t } = useI18n()
 
@@ -9,22 +10,22 @@ const contatosResidenciais = [
     nome: t('contact.residentials.bombas'),
     endereco: 'Rua Tiriba, 54 - Bombas, Bombinhas - SC',
     telefoneFixo: '+55 (47) 3369 0101',
-    whatsapp: '+55 (47) 3170 3551',
+    whatsapp: '+55 (47) 98405 3508',
     email: 'atendimento@marcosimoveis.com.br',
-    codigoPesquisa: 'L092; L093; L094; L095',
     emailSubject: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Bombas',
     whatsappMessage: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Bombas',
+    rotaReserva: '/residencial/bombas',
   },
   {
     nome: t('contact.residentials.mariscal'),
-    endereco: 'Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+    endereco: 'Rua Jaboticabeira, 184 - Canto Grande, Bombinhas - SC',
     telefoneFixo: '+55 (47) 3393 3220',
     whatsapp: '+55 (47) 99669 0082',
     email: 'contato@joaoimoveis.com.br',
-    codigoPesquisa: 'Códigos 77, 71, 74, 343, 375, 617',
     emailSubject: 'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Canto Grande',
     whatsappMessage:
       'Olá!%0AEstou entrando em contato referente ao Residencial Maresias Canto Grande',
+    rotaReserva: '/residencial/mariscal',
   },
   {
     nome: t('contact.residentials.jaboticabeira'),
@@ -32,9 +33,9 @@ const contatosResidenciais = [
     telefoneFixo: '+55 (47) 3393 3220',
     whatsapp: '+55 (47) 99669 0082',
     email: 'contato@joaoimoveis.com.br',
-    codigoPesquisa: 'Casa Jaboticabeira Cód 906',
-    emailSubject: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira Cód 906',
-    whatsappMessage: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira Cód 906',
+    emailSubject: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira',
+    whatsappMessage: 'Olá!%0AEstou entrando em contato referente ao Casa Jaboticabeira',
+    rotaReserva: '/residencial/casa-jaboticabeira',
   },
 ]
 </script>
@@ -100,11 +101,10 @@ const contatosResidenciais = [
                 </p>
               </div>
 
-              <div class="info-item">
-                <h3>
-                  <span class="material-icons">search</span> {{ t('contact.fields.searchCode') }}:
-                </h3>
-                <p>{{ contato.codigoPesquisa }}</p>
+              <div class="contato-reserva">
+                <RouterLink :to="contato.rotaReserva" class="btn btn-modern">
+                  {{ t('actions.reserve') }}
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -286,6 +286,15 @@ const contatosResidenciais = [
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px dashed var(--border-color);
+}
+
+.contato-reserva {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.contato-reserva .btn {
+  width: 100%;
 }
 
 /* Seção do Formulário */

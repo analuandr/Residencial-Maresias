@@ -219,21 +219,32 @@ export default {
       fullKitchen: 'Complete kitchen with utensils and microwave',
       livingRoomTv: 'Living room with Smart TV and Sofa bed',
       livingRoomBicama: 'Living room with Smart TV and Trundle sofa',
+      largeLivingRoomSofa: 'Living room with Smart TV and sofa',
       masterSuite: 'Master Suite with Queen Box Bed',
       masterSuiteCouple: 'Master Suite with Couple Box Bed',
       masterSuiteGeneric: 'Master Suite with Box Bed',
+      suite1Queen: 'Suite 1 with Queen Box Bed',
+      suite2Couple: 'Suite 2 with Couple Box Bed',
       doubleBed: 'Bedroom with Couple Box Bed',
       doubleBedBunk: 'Bedroom with Double Box Bed + Trundle Bed',
+      doubleBedCouple: 'Bedroom with Couple Box Bed',
       twoSingleBeds: 'Bedroom with Single Box Bed + Triple Bunk',
       twoSingleBedsOnly: 'Bedroom with 2 Single Box Beds',
+      twoSingleBedsOnlyBombas: 'Bedroom with 2 Single Box Beds',
       singleBedroomBunk: 'Bedroom with Single Box Bed + Trundle Bed',
+      singleTrilicheSmartTV: 'Bedroom with Single Box Bed + Triple Bunk + Smart TV',
       airConditioningBedrooms: 'Split air conditioning in 2 bedrooms',
       airConditioningThreeBedrooms: 'Split air conditioning in 3 bedrooms',
       airConditioningBedroomLiving: 'Split air conditioning in bedroom and living room',
+      airConditioningBedroomsLiving: 'Split air conditioning in 2 bedrooms and living room',
+      airConditioningThreeBedroomsLiving: 'Split air conditioning in 3 bedrooms and living room',
       airConditioningBedroom: 'Air conditioning in bedroom',
+      airConditioningSplitBedroom: 'Split air conditioning in bedroom',
       laundryWashing: 'Laundry with sink and washing machine',
       laundryBalcony: 'Balcony with sink and washing machine',
       balconyTank: 'Balcony with grill and sink',
+      balconyGrillSink: 'Balcony with grill and sink',
+      balconyWashing: 'Balcony with sink and washing machine',
       solarShowers: 'Showers with solar heating',
       solarShower: 'Shower with solar heating',
       centralGas: 'Central gas',
@@ -242,6 +253,7 @@ export default {
       privateParkingOne: 'Private parking 1 space',
       garage3Cars: 'Garage for 3 cars',
       garage2Cars: 'Garage for 2 cars',
+      outdoorAreaKitchen: 'Outdoor barbecue area with kitchen and bathroom',
       outdoorArea: 'Grill area with outdoor kitchen',
       largeLivingRoom: 'Large living room with Smart TV and Sofa',
       capacity: 'Accommodates up to {count} people',
@@ -253,6 +265,7 @@ export default {
 
   // Beaches
   beaches: {
+    gallery: 'Gallery',
     location: 'Location',
     photoGallery: 'Photo Gallery',
     bombas: {
@@ -300,7 +313,7 @@ export default {
       about: {
         title: 'About the Beach',
         paragraph1:
-          'Canto Grande is composed of two beaches: Mar de Dentro (Inner Sea) and Mar de Fora (Outer Sea), the latter bordering Canto Grande beach.',
+          'Canto Grande is composed of two beaches: Mar de Dentro (Inner Sea) and Mar de Fora (Outer Sea), the latter bordering Mariscal beach.',
         paragraph2:
           'Mar de Fora is known for its crystal clear waters and open sea, being highly sought after by families and tourists looking for ideal places for leisure and sports. Its waves are perfect for surfing and on calm days provide great swimming.',
         paragraph3:
@@ -370,6 +383,9 @@ export default {
     knowResidential: 'Discover the Residential',
     oneBedroom: '1 Bedroom',
     twoBedrooms: '2 Bedrooms',
+    threeBedrooms: '3 Bedrooms',
+    apartmentsOneBedroom: '1 Bedroom Apartments',
+    apartmentsTwoBedrooms: '2 Bedroom Apartments',
     reserve: 'Reserve',
     viewGallery: 'View Gallery',
     backToTop: 'Back to Top',
@@ -570,7 +586,7 @@ export default {
       },
       map: {
         title: 'How to Get There',
-        address: 'Address: Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+        address: 'Address: Rua Jaboticabeira, 184 - Canto Grande, Bombinhas - SC',
       },
       accommodations: {
         title: 'Discover Our Accommodations',
@@ -689,6 +705,10 @@ export default {
     contact: {
       title: 'Contact',
     },
+    developedBy: 'Developed by Vitor Cavalheiro',
+    linkedin: 'LinkedIn',
+    copyEmail: 'Copy email',
+    emailCopied: 'Email copied to clipboard!',
     copyright: 'Residencial Maresias. All rights reserved.',
   },
 }

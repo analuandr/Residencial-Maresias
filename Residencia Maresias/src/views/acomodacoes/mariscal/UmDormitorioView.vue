@@ -17,13 +17,17 @@ const ap201 = computed(() => ({
     t('accommodations.amenities.livingRoomTv'),
     t('accommodations.amenities.doubleBedBunk'),
     t('accommodations.amenities.airConditioningBedroomLiving'),
-    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.balconyWashing'),
     t('accommodations.amenities.solarShower'),
     t('accommodations.amenities.centralGas'),
     t('accommodations.amenities.internalGrill'),
     t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 201/201 Dormitorio.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
+    },
     {
       url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 1.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
@@ -36,12 +40,8 @@ const ap201 = computed(() => ({
       url: '/assets/Fotos Site Mariscal/Mariscal 201/Foto 4.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
-    {
-      url: '/assets/Fotos Site Mariscal/Mariscal 201/Quarto 201.JPG',
-      alt: t('photoCaption.apartmentPhoto', { number: '201' }),
-    },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel76',
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel343',
   rotaInterna: '/acomodacoes/mariscal/1-dormitorio',
 }))
 
@@ -57,7 +57,7 @@ const ap204 = computed(() => ({
     t('accommodations.amenities.livingRoomTv'),
     t('accommodations.amenities.doubleBedBunk'),
     t('accommodations.amenities.airConditioningBedroomLiving'),
-    t('accommodations.amenities.laundryBalcony'),
+    t('accommodations.amenities.balconyWashing'),
     t('accommodations.amenities.solarShower'),
     t('accommodations.amenities.centralGas'),
     t('accommodations.amenities.internalGrill'),
@@ -69,11 +69,23 @@ const ap204 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
     {
+      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 2 (1).jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '204' }),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 4.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '204' }),
+    },
+    {
       url: '/assets/Fotos Site Mariscal/Mariscal 204/Foto 2.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '204' }),
     },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 204/204 Dormitorio.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '204' }),
+    },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel75',
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel617',
   rotaInterna: '/acomodacoes/mariscal/1-dormitorio',
 }))
 </script>

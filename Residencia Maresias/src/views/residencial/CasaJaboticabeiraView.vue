@@ -10,11 +10,11 @@ const fotosJaboticabeira = [
     caption: t('residentialPages.jaboticabeira.photos.facade'),
   },
   {
-    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 02.jpg',
+    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Área Gourmet Casa.jpg',
     caption: t('residentialPages.jaboticabeira.photos.gourmetArea'),
   },
   {
-    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 03.jpg',
+    url: '/assets/Fotos Site Mariscal/Mariscal Casa/Suite Master Casa.jpg',
     caption: t('residentialPages.jaboticabeira.photos.masterSuite'),
   },
 ]
@@ -62,6 +62,25 @@ const pontosProximos = [
       <div v-for="(foto, index) in fotosJaboticabeira" :key="index" class="foto-item">
         <img :src="foto.url" :alt="foto.caption" />
         <p class="foto-caption">{{ foto.caption }}</p>
+      </div>
+    </div>
+
+    <div class="acomodacoes-cta">
+      <h2>
+        <span class="material-icons">visibility</span>
+        {{ t('residentialPages.jaboticabeira.cta.title') }}
+      </h2>
+      <div class="cta-buttons">
+        <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="btn btn-modern">{{
+          t('residentialPages.jaboticabeira.cta.button')
+        }}</RouterLink>
+        <a
+          href="https://www.joaoimoveis.com.br/pt/imovel906"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+          >{{ t('actions.reserve') }}</a
+        >
       </div>
     </div>
 
@@ -141,25 +160,6 @@ const pontosProximos = [
         </iframe>
       </div>
       <p class="endereco">{{ t('residentialPages.jaboticabeira.map.address') }}</p>
-    </div>
-
-    <div class="acomodacoes-cta">
-      <h2>
-        <span class="material-icons">visibility</span>
-        {{ t('residentialPages.jaboticabeira.cta.title') }}
-      </h2>
-      <div class="cta-buttons">
-        <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="btn btn-modern">{{
-          t('residentialPages.jaboticabeira.cta.button')
-        }}</RouterLink>
-        <a
-          href="https://www.joaoimoveis.com.br/pt/imovel906"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-outline"
-          >{{ t('actions.checkAvailability') }}</a
-        >
-      </div>
     </div>
   </div>
 </template>

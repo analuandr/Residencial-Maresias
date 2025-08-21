@@ -12,15 +12,15 @@ const ap101 = computed(() => ({
   itens: [
     t('accommodations.amenities.beachChairs'),
     t('accommodations.amenities.umbrella'),
-    t('accommodations.amenities.bedding'),
     t('accommodations.amenities.fullKitchen'),
     t('accommodations.amenities.livingRoomBicama'),
     t('accommodations.amenities.masterSuiteCouple'),
-    t('accommodations.amenities.doubleBedBunk'),
+    t('accommodations.amenities.twoSingleBedsOnlyBombas'),
     t('accommodations.amenities.airConditioningBedrooms'),
     t('accommodations.amenities.laundryWashing'),
-    t('accommodations.amenities.balconyTank'),
     t('accommodations.amenities.solarShowers'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.balconyGrillSink'),
     t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
@@ -49,7 +49,7 @@ const ap101 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '101' }),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel77',
+  linkReserva: 'https://5724.apre.me/6pessoas-2quartos-1garagens-pet-l092',
   rotaInterna: '/acomodacoes/bombas/2-dormitorios',
 }))
 
@@ -60,15 +60,15 @@ const ap102 = computed(() => ({
   itens: [
     t('accommodations.amenities.beachChairs'),
     t('accommodations.amenities.umbrella'),
-    t('accommodations.amenities.bedding'),
     t('accommodations.amenities.fullKitchen'),
     t('accommodations.amenities.livingRoomBicama'),
     t('accommodations.amenities.masterSuiteCouple'),
-    t('accommodations.amenities.twoSingleBedsOnly'),
+    t('accommodations.amenities.twoSingleBedsOnlyBombas'),
     t('accommodations.amenities.airConditioningBedrooms'),
     t('accommodations.amenities.laundryWashing'),
-    t('accommodations.amenities.balconyTank'),
     t('accommodations.amenities.solarShowers'),
+    t('accommodations.amenities.centralGas'),
+    t('accommodations.amenities.balconyGrillSink'),
     t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
@@ -97,7 +97,7 @@ const ap102 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel71',
+  linkReserva: 'https://5724.apre.me/6pessoas-2quartos-1garagens-pet-l093',
   rotaInterna: '/acomodacoes/bombas/2-dormitorios',
 }))
 </script>

@@ -5,22 +5,6 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-// Imagens da praia - agora reativos
-const fotosPreaia = computed(() => [
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/10/2e/3c/praia-de-bombas.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.panoramicView', { beach: 'Bombas' }),
-  },
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/4a/b6/0a/praia-de-bombas.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.whiteBeaches'),
-  },
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f3/e1/f2/praia-de-bombas.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.sunset', { beach: 'Bombas' }),
-  },
-])
-
 // Atrações e atividades - agora reativos
 const atracoes = computed(() => [
   {
@@ -44,6 +28,18 @@ const atracoes = computed(() => [
     descricao: t('beaches.bombas.attractions.commerce.description'),
   },
 ])
+
+// Galeria da praia de Bombas
+const fotosBombas = [
+  {
+    url: '/assets/Praias/Canto direito da praia.jpeg',
+    caption: 'Canto direito da praia',
+  },
+  {
+    url: '/assets/Praias/Passarela do Ribeiro.jpeg',
+    caption: 'Passarela do Ribeiro',
+  },
+]
 </script>
 
 <template>
@@ -57,11 +53,12 @@ const atracoes = computed(() => [
       </div>
     </section>
 
+    <!-- Galeria da praia -->
     <section class="section-full-width galeria-section">
       <div class="container">
-        <!-- <h2><span class="material-icons">collections</span> {{ t('beaches.bombas.galleryTitle') }}</h2> -->
+        <h2><span class="material-icons">photo_library</span> {{ t('beaches.gallery') }}</h2>
         <div class="galeria-praia">
-          <div v-for="(foto, index) in fotosPreaia" :key="index" class="foto-item">
+          <div v-for="(foto, index) in fotosBombas" :key="index" class="foto-item">
             <img :src="foto.url" :alt="foto.caption" />
             <p class="foto-caption">{{ foto.caption }}</p>
           </div>
@@ -69,6 +66,7 @@ const atracoes = computed(() => [
       </div>
     </section>
 
+    <!-- Informações primeiro -->
     <section class="section-full-width informacoes-outer-section">
       <div class="container">
         <div class="informacoes-section">
@@ -96,6 +94,30 @@ const atracoes = computed(() => [
       </div>
     </section>
 
+    <!-- CTA 'Hospede-se próximo à praia...' agora antes do mapa -->
+    <section class="section-full-width cta-outer-section">
+      <div class="container">
+        <div class="residencial-cta">
+          <h2>
+            <span class="material-icons">apartment</span> {{ t('beaches.bombas.hostingTitle') }}
+          </h2>
+          <p>{{ t('beaches.bombas.hostingDescription') }}</p>
+          <div class="cta-buttons">
+            <RouterLink to="/residencial/bombas" class="btn">{{
+              t('actions.knowResidential')
+            }}</RouterLink>
+            <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="btn btn-outline">
+              {{ t('actions.apartmentsOneBedroom') }}
+            </RouterLink>
+            <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="btn btn-outline">
+              {{ t('actions.apartmentsTwoBedrooms') }}
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa agora no final da página -->
     <section class="section-full-width mapa-outer-section">
       <div class="container">
         <div class="mapa-section">
@@ -117,28 +139,6 @@ const atracoes = computed(() => [
         </div>
       </div>
     </section>
-
-    <section class="section-full-width cta-outer-section">
-      <div class="container">
-        <div class="residencial-cta">
-          <h2>
-            <span class="material-icons">apartment</span> {{ t('beaches.bombas.hostingTitle') }}
-          </h2>
-          <p>{{ t('beaches.bombas.hostingDescription') }}</p>
-          <div class="cta-buttons">
-            <RouterLink to="/residencial/bombas" class="btn">{{
-              t('actions.knowResidential')
-            }}</RouterLink>
-            <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="btn btn-outline">
-              {{ t('actions.oneBedroom') }}
-            </RouterLink>
-            <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="btn btn-outline">
-              {{ t('actions.twoBedrooms') }}
-            </RouterLink>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -150,7 +150,7 @@ const atracoes = computed(() => [
 /* Estilo base para todas as seções full-width */
 .section-full-width {
   width: 100%;
-  padding: 3rem 0; /* Espaçamento vertical */
+  padding: 2rem 0; /* Espaçamento vertical */
 }
 
 /* Container interno para limitar a largura do conteúdo */
@@ -396,7 +396,8 @@ const atracoes = computed(() => [
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  .info-grid {
+  /* Empilhar as colunas no mobile para não ficar espremido */
+  .informacoes-section {
     grid-template-columns: 1fr;
     gap: 2rem;
   }

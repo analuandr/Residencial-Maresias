@@ -14,23 +14,21 @@ const casaJaboticabeira = computed(() => ({
     t('accommodations.amenities.umbrella'),
     t('accommodations.amenities.bedding'),
     t('accommodations.amenities.fullKitchen'),
-    t('accommodations.amenities.largeLivingRoom'),
-    t('accommodations.amenities.masterSuite'),
-    t('accommodations.amenities.doubleBed'),
-    t('accommodations.amenities.singleBedroomBunk'),
-    t('accommodations.amenities.airConditioningThreeBedrooms'),
+    t('accommodations.amenities.largeLivingRoomSofa'),
+    t('accommodations.amenities.suite1Queen'),
+    t('accommodations.amenities.suite2Couple'),
+    t('accommodations.amenities.singleTrilicheSmartTV'),
+    t('accommodations.amenities.airConditioningThreeBedroomsLiving'),
+    t('accommodations.amenities.outdoorAreaKitchen'),
+    t('accommodations.amenities.solarShower'),
+    t('accommodations.amenities.centralGas'),
     t('accommodations.amenities.laundryWashing'),
-    t('accommodations.amenities.garage2Cars'),
-    t('accommodations.amenities.outdoorArea'),
+    t('accommodations.amenities.garage3Cars'),
   ],
   fotos: [
     {
       url: '/assets/Fotos Site Mariscal/Mariscal Casa/Área Gourmet Casa.jpg',
       alt: t('photoCaption.houseMain'),
-    },
-    {
-      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Suite Master Casa.jpg',
-      alt: t('photoCaption.housePhoto'),
     },
     {
       url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 01.jpg',
@@ -56,12 +54,8 @@ const casaJaboticabeira = computed(() => ({
       url: '/assets/Fotos Site Mariscal/Mariscal Casa/Foto 06.jpg',
       alt: t('photoCaption.housePhoto'),
     },
-    {
-      url: '/assets/Fotos Site Mariscal/Mariscal Casa/Fachada do Residencial Mariscal.JPG',
-      alt: t('photoCaption.housePhoto'),
-    },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel74',
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel906',
 }))
 </script>
 

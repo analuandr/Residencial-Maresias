@@ -279,21 +279,32 @@ export default {
       fullKitchen: 'Cocina completa con utensilios y microondas',
       livingRoomTv: 'Sala con Smart TV y Sofá cama',
       livingRoomBicama: 'Sala con Smart TV y Sofá bicama',
+      largeLivingRoomSofa: 'Sala con Smart TV y sofá',
       masterSuite: 'Suite Master con Cama Box Queen',
       masterSuiteCouple: 'Suite Master con Cama Box de Matrimonio',
       masterSuiteGeneric: 'Suite Master con Cama Box',
+      suite1Queen: 'Suite 1 con Cama Box Queen',
+      suite2Couple: 'Suite 2 con Cama Box de Matrimonio',
       doubleBed: 'Dormitorio con Cama Box de Matrimonio',
       doubleBedBunk: 'Dormitorio con Cama Box Matrimonial + Bicama',
+      doubleBedCouple: 'Dormitorio con Cama Box de Matrimonio',
       twoSingleBeds: 'Dormitorio con Cama Box Individual + Triliche',
       twoSingleBedsOnly: 'Dormitorio con 2 Cama Box Individual',
+      twoSingleBedsOnlyBombas: 'Dormitorio con 2 Cama Box Individual',
       singleBedroomBunk: 'Dormitorio con Cama Box Individual + Bicama',
+      singleTrilicheSmartTV: 'Dormitorio con Cama Box Individual + Triliche + Smart TV',
       airConditioningBedrooms: 'Aire acondicionado split en 2 dormitorios',
       airConditioningThreeBedrooms: 'Aire acondicionado split en 3 dormitorios',
       airConditioningBedroomLiving: 'Aire acondicionado split en dormitorio y sala',
+      airConditioningBedroomsLiving: 'Aire acondicionado split en 2 dormitorios y sala',
+      airConditioningThreeBedroomsLiving: 'Aire acondicionado split en 3 dormitorios y sala',
       airConditioningBedroom: 'Aire acondicionado en dormitorio',
+      airConditioningSplitBedroom: 'Aire acondicionado split en dormitorio',
       laundryWashing: 'Lavandería con lavadero y lavadora',
       laundryBalcony: 'Balcón con lavadero y lavadora',
       balconyTank: 'Balcón con parrilla y lavadero',
+      balconyGrillSink: 'Balcón con parrilla y lavadero',
+      balconyWashing: 'Balcón con lavadero y lavadora',
       solarShowers: 'Duchas con calentamiento solar',
       solarShower: 'Ducha con calentamiento solar',
       centralGas: 'Gas central',
@@ -302,6 +313,7 @@ export default {
       privateParkingOne: 'Estacionamiento privado 1 plaza',
       garage3Cars: 'Garaje para 3 autos',
       garage2Cars: 'Garaje para 2 autos',
+      outdoorAreaKitchen: 'Área de parrilla externa con cocina y baño',
       outdoorArea: 'Área de parrilla con cocina externa',
       largeLivingRoom: 'Sala amplia con Smart TV y Sofá',
       capacity: 'Aloja hasta {count} personas',
@@ -313,6 +325,7 @@ export default {
 
   // Playas
   beaches: {
+    gallery: 'Galería',
     location: 'Ubicación',
     photoGallery: 'Galería de Fotos',
     bombas: {
@@ -361,7 +374,7 @@ export default {
       about: {
         title: 'Sobre la Playa',
         paragraph1:
-          'Canto Grande está compuesto por dos playas: el Mar de Dentro y el Mar de Fora, este último haciendo frontera con la playa de Canto Grande.',
+          'Canto Grande está compuesto por dos playas: el Mar de Dentro y el Mar de Fora, este último haciendo frontera con la playa de Mariscal.',
         paragraph2:
           'El Mar de Fora es conocido por sus aguas cristalinas y mar abierto, siendo muy buscado por familias y turistas que buscan lugares ideales para el ocio y la práctica de deportes. Sus olas son perfectas para el surf y en días calmos proporcionan excelentes baños de mar.',
         paragraph3:
@@ -431,6 +444,9 @@ export default {
     knowResidential: 'Conoce el Residencial',
     oneBedroom: '1 Dormitorio',
     twoBedrooms: '2 Dormitorios',
+    threeBedrooms: '3 Dormitorios',
+    apartmentsOneBedroom: 'Apartamentos de 1 Dormitorio',
+    apartmentsTwoBedrooms: 'Apartamentos de 2 Dormitorios',
     reserve: 'Reservar',
     viewGallery: 'Ver Galería',
     backToTop: 'Volver Arriba',
@@ -635,7 +651,7 @@ export default {
       },
       map: {
         title: 'Cómo Llegar',
-        address: 'Dirección: Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+        address: 'Dirección: Rua Jaboticabeira, 184 - Canto Grande, Bombinhas - SC',
       },
       accommodations: {
         title: 'Conoce Nuestros Alojamientos',
@@ -739,6 +755,10 @@ export default {
     contact: {
       title: 'Contacto',
     },
+    developedBy: 'Desarrollado por Vitor Cavalheiro',
+    linkedin: 'LinkedIn',
+    copyEmail: 'Copiar email',
+    emailCopied: '¡Email copiado al portapapeles!',
     copyright: 'Residencial Maresias. Todos los derechos reservados.',
   },
 }

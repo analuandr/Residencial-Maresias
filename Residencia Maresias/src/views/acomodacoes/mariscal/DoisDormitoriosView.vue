@@ -71,7 +71,7 @@ const ap102 = computed(() => ({
   ],
   fotos: [
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 102/Foto 1.jpg',
+      url: '/assets/Fotos Site Mariscal/Mariscal 102/102 Varanda.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
@@ -87,15 +87,11 @@ const ap102 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 102/Sala 102_2.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal 102/102 Dormitorio.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 102/Suite 102.JPG',
-      alt: t('photoCaption.apartmentPhoto', { number: '102' }),
-    },
-    {
-      url: '/assets/Fotos Site Mariscal/Mariscal 102/Quarto solteiro 102.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal 102/102 Suite.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '102' }),
     },
   ],
@@ -119,7 +115,7 @@ const ap104 = computed(() => ({
     t('accommodations.amenities.laundryWashing'),
     t('accommodations.amenities.solarShowers'),
     t('accommodations.amenities.centralGas'),
-    t('accommodations.amenities.balconyGrill'),
+    t('accommodations.amenities.internalGrill'),
     t('accommodations.amenities.privateParkingOne'),
   ],
   fotos: [
@@ -140,7 +136,11 @@ const ap104 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '104' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 104/Quarto solteiro 104.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal 104/104 Suite.jpg',
+      alt: t('photoCaption.apartmentPhoto', { number: '104' }),
+    },
+    {
+      url: '/assets/Fotos Site Mariscal/Mariscal 104/104 Dormitorio.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '104' }),
     },
   ],
@@ -160,7 +160,7 @@ const ap202 = computed(() => ({
     t('accommodations.amenities.livingRoomTv'),
     t('accommodations.amenities.masterSuiteGeneric'),
     t('accommodations.amenities.singleBedroomBunk'),
-    t('accommodations.amenities.airConditioningBedrooms'),
+    t('accommodations.amenities.airConditioningBedroomsLiving'),
     t('accommodations.amenities.laundryWashing'),
     t('accommodations.amenities.solarShowers'),
     t('accommodations.amenities.centralGas'),
@@ -185,15 +185,15 @@ const ap202 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 202/Suite 202.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal 202/202 Dormitorio.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
     {
-      url: '/assets/Fotos Site Mariscal/Mariscal 202/Quarto solteiro 202.JPG',
+      url: '/assets/Fotos Site Mariscal/Mariscal 202/202 Suite.jpg',
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
   ],
-  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel78',
+  linkReserva: 'https://www.joaoimoveis.com.br/pt/imovel375',
   rotaInterna: '/acomodacoes/mariscal/2-dormitorios',
 }))
 </script>

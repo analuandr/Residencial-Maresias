@@ -13,12 +13,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
-    // Página geral do residencial
-    {
-      path: '/residencial',
-      name: 'residencial',
-      component: () => import('../views/ResidencialView.vue'),
-    },
+    // Rota geral de residencial removida - o menu agora abre direto os subitens
     // Páginas de "O Residencial"
     {
       path: '/residencial/bombas',

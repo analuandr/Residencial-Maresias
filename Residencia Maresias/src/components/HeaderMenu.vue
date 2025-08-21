@@ -12,12 +12,84 @@ const showSubmenuPraias = ref(false)
 const showSubmenuReservar = ref(false)
 const isScrolled = ref(false)
 const headerHeight = ref(0)
+const isMobile = ref(false)
 
 // Controle do menu hamburger em telas pequenas
 const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+}
+
+const updateIsMobile = () => {
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    isMobile.value = window.matchMedia('(max-width: 768px)').matches
+  } else {
+    isMobile.value = false
+  }
+}
+
+const closeAllSubmenus = () => {
+  showSubmenuResidencial.value = false
+  showSubmenuAcomodacoes.value = false
+  showSubmenuPraias.value = false
+  showSubmenuReservar.value = false
+}
+
+const onTopLevelClick = (menu, event) => {
+  if (isMobile.value) {
+    if (event && typeof event.preventDefault === 'function') event.preventDefault()
+
+    if (menu === 'residencial') {
+      const next = !showSubmenuResidencial.value
+      closeAllSubmenus()
+      showSubmenuResidencial.value = next
+    }
+    if (menu === 'acomodacoes') {
+      const next = !showSubmenuAcomodacoes.value
+      closeAllSubmenus()
+      showSubmenuAcomodacoes.value = next
+    }
+    if (menu === 'praias') {
+      const next = !showSubmenuPraias.value
+      closeAllSubmenus()
+      showSubmenuPraias.value = next
+    }
+    if (menu === 'reservar') {
+      const next = !showSubmenuReservar.value
+      closeAllSubmenus()
+      showSubmenuReservar.value = next
+    }
+  }
+}
+
+const onTopLevelEnter = (menu) => {
+  if (isMobile.value) return
+  if (menu === 'residencial') {
+    closeAllSubmenus()
+    showSubmenuResidencial.value = true
+  }
+  if (menu === 'acomodacoes') {
+    closeAllSubmenus()
+    showSubmenuAcomodacoes.value = true
+  }
+  if (menu === 'praias') {
+    closeAllSubmenus()
+    showSubmenuPraias.value = true
+  }
+  if (menu === 'reservar') {
+    closeAllSubmenus()
+    showSubmenuReservar.value = true
+  }
+}
+
+const onTopLevelLeave = () => {
+  if (isMobile.value) return
+  closeAllSubmenus()
 }
 
 // Detectar quando o usuário rolar a página para mudar o estilo do menu
@@ -35,10 +107,15 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   // Chama imediatamente para verificar posição inicial
   handleScroll()
+
+  // Detecta viewport inicial e mantém atualizado
+  updateIsMobile()
+  window.addEventListener('resize', updateIsMobile)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', updateIsMobile)
 })
 </script>
 
@@ -52,9 +129,9 @@ onUnmounted(() => {
         <div class="logo-container">
           <RouterLink to="/" class="logo-link">
             <div class="brand-content">
-              <div class="logo-section">
-                <img src="/logo.png" alt="Logo Residencial Maresias" class="main-logo" />
-              </div>
+              <!-- <div class="logo-section">
+                <img src="/logo_original.png" alt="Logo Residencial Maresias" class="main-logo" />
+              </div> -->
               <h1 class="main-title">{{ t('home.title') }}</h1>
               <div class="sub-brands">
                 <RouterLink to="/residencial/bombas" class="sub-brand">{{
@@ -77,29 +154,41 @@ onUnmounted(() => {
       <div class="container nav-container">
         <!-- Logo na Navegação (Esquerda) -->
         <RouterLink to="/" class="nav-logo-link">
-          <img src="/logo.png" alt="Logo Maresias" class="nav-logo" />
+          <img src="/logo_original.png" alt="Logo Maresias" class="nav-logo" />
         </RouterLink>
 
         <div class="nav-links-container">
           <div class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
             <div
               class="nav-item"
-              @mouseenter="showSubmenuResidencial = true"
-              @mouseleave="showSubmenuResidencial = false"
+              @mouseenter="() => onTopLevelEnter('residencial')"
+              @mouseleave="onTopLevelLeave"
             >
-              <RouterLink to="/residencial" class="nav-link">
+              <button
+                type="button"
+                class="nav-link nav-link-button"
+                @click="(e) => onTopLevelClick('residencial', e)"
+              >
                 <span class="material-icons">home</span> {{ t('nav.residential') }}
-              </RouterLink>
+              </button>
               <div class="submenu" v-if="showSubmenuResidencial">
-                <RouterLink to="/residencial/bombas" class="submenu-item">
+                <RouterLink to="/residencial/bombas" class="submenu-item" @click="closeMobileMenu">
                   <span class="material-icons">apartment</span>
                   {{ t('footer.locations.bombas') }}
                 </RouterLink>
-                <RouterLink to="/residencial/mariscal" class="submenu-item">
+                <RouterLink
+                  to="/residencial/mariscal"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">apartment</span>
                   {{ t('footer.locations.mariscal') }}
                 </RouterLink>
-                <RouterLink to="/residencial/casa-jaboticabeira" class="submenu-item">
+                <RouterLink
+                  to="/residencial/casa-jaboticabeira"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">house</span>
                   {{ t('footer.locations.jaboticabeira') }}
                 </RouterLink>
@@ -108,20 +197,28 @@ onUnmounted(() => {
 
             <div
               class="nav-item"
-              @mouseenter="showSubmenuAcomodacoes = true"
-              @mouseleave="showSubmenuAcomodacoes = false"
+              @mouseenter="() => onTopLevelEnter('acomodacoes')"
+              @mouseleave="onTopLevelLeave"
             >
-              <span class="nav-link">
+              <span class="nav-link" @click="(e) => onTopLevelClick('acomodacoes', e)">
                 <span class="material-icons">bed</span> {{ t('nav.accommodations') }}
               </span>
               <div class="submenu" v-if="showSubmenuAcomodacoes">
                 <div class="submenu-category">
                   <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
                 </div>
-                <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/bombas/1-dormitorio"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
                 </RouterLink>
-                <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/bombas/2-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">hotel</span>
                   {{ t('actions.twoBedrooms') }}
                 </RouterLink>
@@ -130,10 +227,18 @@ onUnmounted(() => {
                   <span class="material-icons">location_on</span>
                   {{ t('footer.locations.mariscal') }}
                 </div>
-                <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/mariscal/1-dormitorio"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
                 </RouterLink>
-                <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/mariscal/2-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">hotel</span>
                   {{ t('actions.twoBedrooms') }}
                 </RouterLink>
@@ -142,27 +247,31 @@ onUnmounted(() => {
                   <span class="material-icons">house</span>
                   {{ t('footer.locations.jaboticabeira') }}
                 </div>
-                <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="submenu-item">
-                  <span class="material-icons">bedroom_parent</span> 3
-                  {{ t('nav.accommodations') }}
+                <RouterLink
+                  to="/acomodacoes/casa-jaboticabeira/3-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
+                  <span class="material-icons">bedroom_parent</span>
+                  {{ t('actions.threeBedrooms') }}
                 </RouterLink>
               </div>
             </div>
 
             <div
               class="nav-item"
-              @mouseenter="showSubmenuPraias = true"
-              @mouseleave="showSubmenuPraias = false"
+              @mouseenter="() => onTopLevelEnter('praias')"
+              @mouseleave="onTopLevelLeave"
             >
-              <span class="nav-link">
+              <span class="nav-link" @click="(e) => onTopLevelClick('praias', e)">
                 <span class="material-icons">beach_access</span> {{ t('nav.beaches') }}
               </span>
               <div class="submenu" v-if="showSubmenuPraias">
-                <RouterLink to="/praias/bombas" class="submenu-item">
+                <RouterLink to="/praias/bombas" class="submenu-item" @click="closeMobileMenu">
                   <span class="material-icons">waves</span>
                   {{ t('footer.locations.bombas') }}
                 </RouterLink>
-                <RouterLink to="/praias/mariscal" class="submenu-item">
+                <RouterLink to="/praias/mariscal" class="submenu-item" @click="closeMobileMenu">
                   <span class="material-icons">waves</span>
                   {{ t('footer.locations.mariscal') }}
                 </RouterLink>
@@ -170,27 +279,35 @@ onUnmounted(() => {
             </div>
 
             <div class="nav-item">
-              <RouterLink to="/contato" class="nav-link">
+              <RouterLink to="/contato" class="nav-link" @click="closeMobileMenu">
                 <span class="material-icons">email</span> {{ t('nav.contact') }}
               </RouterLink>
             </div>
 
             <div
               class="nav-item"
-              @mouseenter="showSubmenuReservar = true"
-              @mouseleave="showSubmenuReservar = false"
+              @mouseenter="() => onTopLevelEnter('reservar')"
+              @mouseleave="onTopLevelLeave"
             >
-              <span class="nav-link btn-reservar">
+              <span class="nav-link btn-reservar" @click="(e) => onTopLevelClick('reservar', e)">
                 <span class="material-icons">calendar_today</span> {{ t('nav.reserve') }}
               </span>
               <div class="submenu" v-if="showSubmenuReservar">
                 <div class="submenu-category">
                   <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
                 </div>
-                <RouterLink to="/acomodacoes/bombas/1-dormitorio" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/bombas/1-dormitorio"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
                 </RouterLink>
-                <RouterLink to="/acomodacoes/bombas/2-dormitorios" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/bombas/2-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">hotel</span>
                   {{ t('actions.twoBedrooms') }}
                 </RouterLink>
@@ -199,10 +316,18 @@ onUnmounted(() => {
                   <span class="material-icons">location_on</span>
                   {{ t('footer.locations.mariscal') }}
                 </div>
-                <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/mariscal/1-dormitorio"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">bed</span> {{ t('actions.oneBedroom') }}
                 </RouterLink>
-                <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="submenu-item">
+                <RouterLink
+                  to="/acomodacoes/mariscal/2-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
                   <span class="material-icons">hotel</span>
                   {{ t('actions.twoBedrooms') }}
                 </RouterLink>
@@ -211,9 +336,13 @@ onUnmounted(() => {
                   <span class="material-icons">house</span>
                   {{ t('footer.locations.jaboticabeira') }}
                 </div>
-                <RouterLink to="/acomodacoes/casa-jaboticabeira/3-dormitorios" class="submenu-item">
-                  <span class="material-icons">bedroom_parent</span> 3
-                  {{ t('nav.accommodations') }}
+                <RouterLink
+                  to="/acomodacoes/casa-jaboticabeira/3-dormitorios"
+                  class="submenu-item"
+                  @click="closeMobileMenu"
+                >
+                  <span class="material-icons">bedroom_parent</span>
+                  {{ t('actions.threeBedrooms') }}
                 </RouterLink>
               </div>
             </div>
@@ -228,6 +357,9 @@ onUnmounted(() => {
         </button>
       </div>
     </nav>
+
+    <!-- Overlay para fechar o menu mobile -->
+    <div v-if="isMobileMenuOpen" class="mobile-overlay" @click="closeMobileMenu"></div>
   </header>
 </template>
 
@@ -327,6 +459,7 @@ onUnmounted(() => {
 .main-nav {
   background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -367,7 +500,8 @@ onUnmounted(() => {
   position: relative;
 }
 
-.nav-link {
+.nav-link,
+.nav-link-button {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -380,7 +514,20 @@ onUnmounted(() => {
   cursor: pointer;
 }
 
+.nav-link-button {
+  background: transparent;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: left;
+}
+
 .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -454,6 +601,7 @@ onUnmounted(() => {
   gap: 4px;
   padding: 8px;
   margin-left: auto;
+  touch-action: manipulation;
 }
 
 .mobile-menu-toggle span {
@@ -471,11 +619,25 @@ onUnmounted(() => {
 
   .sub-brands {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
+  }
+
+  .sub-brand {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
   }
 
   .main-logo {
     height: 60px;
+  }
+
+  .language-selector-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: none;
+    z-index: 10;
   }
 
   .mobile-menu-toggle {
@@ -490,11 +652,12 @@ onUnmounted(() => {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 280px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -503,16 +666,22 @@ onUnmounted(() => {
     transition: all 0.3s ease;
     z-index: 1001;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    will-change: transform, opacity;
     visibility: hidden;
     opacity: 0;
-    display: none;
+    display: flex;
+    pointer-events: none;
+    transform: translateX(100%);
   }
 
   .nav-links.mobile-open {
-    right: 0;
     visibility: visible;
     opacity: 1;
     display: flex;
+    pointer-events: auto;
+    transform: translateX(0);
   }
 
   .nav-item {
@@ -566,6 +735,16 @@ onUnmounted(() => {
     font-size: 2rem;
   }
 
+  .sub-brands {
+    gap: 0.6rem;
+  }
+
+  .sub-brand {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 12px;
+  }
+
   .main-logo {
     height: 50px;
   }
@@ -575,10 +754,11 @@ onUnmounted(() => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  display: block;
 }
 
 html,

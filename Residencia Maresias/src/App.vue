@@ -1,9 +1,24 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { ref } from 'vue'
 import HeaderMenu from './components/HeaderMenu.vue'
 
 const { t } = useI18n()
+
+const showToast = ref(false)
+const toastMessage = ref('')
+
+function copyEmail() {
+  const email = 'vitor.ds,cavalheiro99@gmail.com'
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(() => {
+      toastMessage.value = t('footer.emailCopied')
+      showToast.value = true
+      setTimeout(() => (showToast.value = false), 2000)
+    })
+  }
+}
 </script>
 
 <template>
@@ -59,7 +74,36 @@ const { t } = useI18n()
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; {{ new Date().getFullYear() }} {{ t('footer.copyright') }}</p>
+          <p class="developed-by">{{ t('footer.developedBy') }}</p>
+          <div class="footer-actions">
+            <a
+              class="social-icon"
+              href="https://www.linkedin.com/in/vitor-cavalheiro/"
+              target="_blank"
+              rel="noopener"
+              :title="t('footer.linkedin')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.026-3.059-1.865-3.059-1.866 0-2.152 1.459-2.152 2.968v5.695h-3v-11h2.881v1.501h.041c.401-.761 1.379-1.562 2.839-1.562 3.037 0 3.6 2.001 3.6 4.604v6.457z"
+                />
+              </svg>
+            </a>
+            <button class="social-icon" @click="copyEmail" :title="t('footer.copyEmail')">
+              <span class="material-icons">email</span>
+            </button>
+          </div>
+        </div>
+
+        <div v-if="showToast" class="toast" role="status" aria-live="polite">
+          {{ toastMessage }}
         </div>
       </div>
     </footer>
@@ -277,9 +321,38 @@ main {
 }
 
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom .developed-by {
+  margin: 0;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-actions .social-icon {
+  border: none;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  z-index: 1000;
 }
 
 a {
@@ -416,6 +489,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Estilos responsivos para o footer */
@@ -438,6 +514,11 @@ a:hover {
   /* Em dispositivos móveis, centralizar o texto */
   .footer-left,
   .footer-right {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
     text-align: center;
   }
 

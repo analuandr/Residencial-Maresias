@@ -20,20 +20,25 @@ export default {
   actions: {
     oneBedroom: '1 Dormitório',
     twoBedrooms: '2 Dormitórios',
+    threeBedrooms: '3 Dormitórios',
+    apartmentsOneBedroom: 'Apartamentos de 1 Dormitório',
+    apartmentsTwoBedrooms: 'Apartamentos de 2 Dormitórios',
     book: 'Reservar',
+    reserve: 'Reservar',
     learnMore: 'Saiba Mais',
     exploreOptions: 'Explorar Opções',
     clickToKnow: 'Clique para conhecer',
     viewGallery: 'Ver Galeria',
     backToTop: 'Voltar ao Topo',
     checkAvailability: 'Verificar Disponibilidade',
+    knowResidential: 'Conheça o Residencial',
   },
 
-  // Página principal
+  // Homepage
   home: {
     title: 'Residencial Maresias',
     subtitle: 'Sua hospedagem ideal em Bombinhas',
-    chooseAccommodation: 'Escolha Sua Hospedagem',
+    chooseAccommodation: 'Escolha sua Acomodação',
     bombas: {
       title: 'Residencial Bombas',
       description:
@@ -237,21 +242,32 @@ export default {
       fullKitchen: 'Cozinha completa com utensílios e micro ondas',
       livingRoomTv: 'Sala com Smart TV e Sofá cama',
       livingRoomBicama: 'Sala com Smart TV e Sofá bicama',
+      largeLivingRoomSofa: 'Sala com Smart TV e sofá',
       masterSuite: 'Suíte com Cama Box Queen',
       masterSuiteCouple: 'Suíte com Cama Box Casal',
       masterSuiteGeneric: 'Suíte com Cama Box',
+      suite1Queen: 'Suíte 1 com Cama Box Queen',
+      suite2Couple: 'Suíte 2 com Cama Box Casal',
       doubleBed: 'Dormitório com Cama Box Casal',
       doubleBedBunk: 'Dormitório com Cama Box Casal + Bicama',
+      doubleBedCouple: 'Dormitório com Cama Box Casal',
       twoSingleBeds: 'Dormitório com Cama Box Solteiro + Triliche',
       twoSingleBedsOnly: 'Dormitório com Cama Box Solteiro + Triliche',
+      twoSingleBedsOnlyBombas: 'Dormitório com 2 Cama Box Solteiro',
       singleBedroomBunk: 'Dormitório com Cama Box Solteiro + Bicama',
+      singleTrilicheSmartTV: 'Dormitório com Cama Box Solteiro + Triliche + Smart TV',
       airConditioningBedrooms: 'Ar-condicionado split nos 2 dormitórios',
       airConditioningThreeBedrooms: 'Ar-condicionado split nos 3 dormitórios',
       airConditioningBedroomLiving: 'Ar-condicionado split no dormitório e na sala',
+      airConditioningBedroomsLiving: 'Ar-condicionado split nos 2 dormitórios e sala',
+      airConditioningThreeBedroomsLiving: 'Ar-condicionado split nos 3 dormitórios e na sala',
       airConditioningBedroom: 'Ar-condicionado no dormitório',
+      airConditioningSplitBedroom: 'Ar-condicionado split no dormitório',
       laundryWashing: 'Lavanderia com tanque e máquina de lavar',
       laundryBalcony: 'Varanda com churrasqueira e tanque',
       balconyTank: 'Varanda com churrasqueira e tanque',
+      balconyGrillSink: 'Varanda com churrasqueira e pia',
+      balconyWashing: 'Varanda com tanque e máquina de lavar',
       solarShowers: 'Duchas com aquecimento solar',
       solarShower: 'Ducha com aquecimento solar',
       centralGas: 'Gás central',
@@ -260,6 +276,7 @@ export default {
       privateParkingOne: 'Estacionamento privativo 1 vaga',
       garage3Cars: 'Garagem para 3 carros',
       garage2Cars: 'Garagem para 2 carros',
+      outdoorAreaKitchen: 'Área de churrasqueira externa com cozinha e banheiro',
       outdoorArea: 'Área de churrasqueira com cozinha externa',
       largeLivingRoom: 'Sala ampla com Smart TV e Sofá',
       capacity: 'Acomoda até {count} pessoas',
@@ -271,6 +288,7 @@ export default {
 
   // Praias
   beaches: {
+    gallery: 'Galeria',
     location: 'Localização',
     photoGallery: 'Galeria de Fotos',
     bombas: {
@@ -320,7 +338,7 @@ export default {
       about: {
         title: 'Sobre a Praia',
         paragraph1:
-          'Canto Grande é composta por duas praias: o Mar de Dentro e o Mar de Fora, este último fazendo divisa com a praia de Canto Grande.',
+          'Canto Grande é composta por duas praias: o Mar de Dentro e o Mar de Fora, este último fazendo divisa com a praia de Mariscal.',
         paragraph2:
           'O Mar de Fora é conhecido por suas águas cristalinas e mar aberto, sendo bastante procurado por famílias e turistas que buscam locais ideais para lazer e a prática de esportes. Suas ondas são perfeitas para o surfe e nos dias calmos proporcionam ótimos banhos de mar.',
         paragraph3:
@@ -581,7 +599,7 @@ export default {
       },
       map: {
         title: 'Como Chegar',
-        address: 'Endereço: Rua Jaboticabeira, 194 - Canto Grande, Bombinhas - SC',
+        address: 'Endereço: Rua Jaboticabeira, 184 - Canto Grande, Bombinhas - SC',
       },
       accommodations: {
         title: 'Conheça Nossas Acomodações',
@@ -700,6 +718,10 @@ export default {
     contact: {
       title: 'Contato',
     },
+    developedBy: 'Desenvolvido por Vitor Cavalheiro',
+    linkedin: 'LinkedIn',
+    copyEmail: 'Copiar e-mail',
+    emailCopied: 'E-mail copiado para a área de transferência!',
     copyright: 'Residencial Maresias. Todos os direitos reservados.',
   },
 }

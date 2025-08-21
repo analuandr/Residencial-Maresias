@@ -5,22 +5,6 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-// Imagens da praia - agora reativos
-const fotosPreaia = computed(() => [
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/5a/3a/d1/praia-de-canto-grande.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.mariscalPanoramicView'),
-  },
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/4c/f4/84/praia-de-canto-grande.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.whiteSandCrystalWaters'),
-  },
-  {
-    url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/a0/84/3e/praia-de-canto-grande.jpg?w=1200&h=-1&s=1',
-    caption: t('photoCaption.mariscalSunset'),
-  },
-])
-
 // Atrações e atividades - agora reativos
 const atracoes = computed(() => [
   {
@@ -44,6 +28,18 @@ const atracoes = computed(() => [
     descricao: t('beaches.mariscal.attractions.surf.description'),
   },
 ])
+
+// Galeria de Canto Grande (Mariscal) - Mar de Dentro e Mar de Fora
+const fotosCantoGrande = [
+  {
+    url: '/assets/Praias/Mar de dentro.jpeg',
+    caption: 'Mar de Dentro',
+  },
+  {
+    url: '/assets/Praias/Mar de fora.jpeg',
+    caption: 'Mar de Fora',
+  },
+]
 </script>
 
 <template>
@@ -59,13 +55,37 @@ const atracoes = computed(() => [
       </div>
     </section>
 
+    <!-- Galeria da praia -->
     <section class="section-full-width galeria-section">
       <div class="container">
-        <h2><span class="material-icons">collections</span> {{ t('beaches.photoGallery') }}</h2>
+        <h2><span class="material-icons">photo_library</span> {{ t('beaches.gallery') }}</h2>
         <div class="galeria-praia">
-          <div v-for="(foto, index) in fotosPreaia" :key="index" class="foto-item">
+          <div v-for="(foto, index) in fotosCantoGrande" :key="index" class="foto-item">
             <img :src="foto.url" :alt="foto.caption" />
             <p class="foto-caption">{{ foto.caption }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 'Hospede-se próximo...' agora antes do mapa -->
+    <section class="section-full-width cta-outer-section">
+      <div class="container">
+        <div class="residencial-cta">
+          <h2>
+            <span class="material-icons">apartment</span> {{ t('beaches.mariscal.cta.title') }}
+          </h2>
+          <p>{{ t('beaches.mariscal.cta.description') }}</p>
+          <div class="cta-buttons">
+            <RouterLink to="/residencial/mariscal" class="btn">{{
+              t('beaches.mariscal.cta.knowResidential')
+            }}</RouterLink>
+            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn btn-outline">
+              {{ t('actions.apartmentsOneBedroom') }}
+            </RouterLink>
+            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn btn-outline">
+              {{ t('actions.apartmentsTwoBedrooms') }}
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -120,28 +140,6 @@ const atracoes = computed(() => [
               referrerpolicy="no-referrer-when-downgrade"
             >
             </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-full-width cta-outer-section">
-      <div class="container">
-        <div class="residencial-cta">
-          <h2>
-            <span class="material-icons">apartment</span> {{ t('beaches.mariscal.cta.title') }}
-          </h2>
-          <p>{{ t('beaches.mariscal.cta.description') }}</p>
-          <div class="cta-buttons">
-            <RouterLink to="/residencial/mariscal" class="btn">{{
-              t('beaches.mariscal.cta.knowResidential')
-            }}</RouterLink>
-            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn btn-outline">
-              {{ t('beaches.mariscal.cta.oneBedroom') }}
-            </RouterLink>
-            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn btn-outline">
-              {{ t('beaches.mariscal.cta.twoBedrooms') }}
-            </RouterLink>
           </div>
         </div>
       </div>
@@ -403,7 +401,8 @@ const atracoes = computed(() => [
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  .info-grid {
+  /* Empilhar as colunas no mobile para não ficar espremido */
+  .informacoes-section {
     grid-template-columns: 1fr;
     gap: 2rem;
   }

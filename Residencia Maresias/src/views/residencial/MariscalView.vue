@@ -78,6 +78,25 @@ const pontosProximos = [
       </div>
     </section>
 
+    <section class="section-full-width cta-outer-section">
+      <div class="container">
+        <div class="acomodacoes-cta">
+          <h2>
+            <span class="material-icons">bed</span>
+            {{ t('residentialPages.mariscal.accommodations.title') }}
+          </h2>
+          <div class="cta-buttons">
+            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn btn-modern">
+              {{ t('residentialPages.mariscal.accommodations.oneBedroom') }}
+            </RouterLink>
+            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn btn-modern">
+              {{ t('residentialPages.mariscal.accommodations.twoBedrooms') }}
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-full-width informacoes-outer-section">
       <div class="container">
         <div class="informacoes-section">
@@ -132,25 +151,6 @@ const pontosProximos = [
         </div>
       </div>
     </section>
-
-    <section class="section-full-width cta-outer-section">
-      <div class="container">
-        <div class="acomodacoes-cta">
-          <h2>
-            <span class="material-icons">bed</span>
-            {{ t('residentialPages.mariscal.accommodations.title') }}
-          </h2>
-          <div class="cta-buttons">
-            <RouterLink to="/acomodacoes/mariscal/1-dormitorio" class="btn btn-modern">
-              {{ t('residentialPages.mariscal.accommodations.oneBedroom') }}
-            </RouterLink>
-            <RouterLink to="/acomodacoes/mariscal/2-dormitorios" class="btn btn-modern">
-              {{ t('residentialPages.mariscal.accommodations.twoBedrooms') }}
-            </RouterLink>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -187,7 +187,7 @@ const pontosProximos = [
 /* Seção Cabeçalho */
 .residencial-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .residencial-header h1 {
@@ -212,7 +212,7 @@ const pontosProximos = [
 .galeria-section h2 {
   text-align: center;
   color: var(--primary-color);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   font-size: 2rem;
 }
 
@@ -382,7 +382,7 @@ const pontosProximos = [
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 

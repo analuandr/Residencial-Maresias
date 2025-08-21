@@ -19,7 +19,7 @@ const carouselSlides = [
     link: '/residencial/casa-jaboticabeira',
   },
   {
-    image: '/assets/Fotos Site Bombas/Fachada Residencial Bombas.jpg',
+    image: '/assets/Fotos Site Bombas/Fachada.jpg',
     title: t('home.carousel.mariscal.title'),
     description: t('home.carousel.mariscal.description'),
     link: '/residencial/bombas',

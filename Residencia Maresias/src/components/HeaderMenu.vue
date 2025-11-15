@@ -417,6 +417,7 @@ onUnmounted(() => {
 
 .main-title {
   font-size: 3.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.8),
@@ -475,7 +476,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .nav-logo {
@@ -614,18 +615,33 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .main-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-top: 1.2rem;
+  }
+
+  .beach-overlay {
+    padding-bottom: 1.5rem;
+  }
+
+  .nav-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-logo {
+    height: 32px;
   }
 
   .sub-brands {
     flex-direction: column;
     gap: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .sub-brand {
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.7rem;
     font-size: 0.9rem;
     border-radius: 15px;
+    min-width: 140px;
   }
 
   .main-logo {
@@ -661,9 +677,9 @@ onUnmounted(() => {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 4rem 1.5rem 2rem;
+    padding: 5rem 1.5rem 2rem;
     gap: 0.5rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -694,9 +710,10 @@ onUnmounted(() => {
   .nav-link {
     width: 100%;
     justify-content: flex-start;
-    padding: 0.75rem;
+    padding: 0.8rem 1rem;
     border-radius: 8px;
     font-size: 1rem;
+    min-height: 48px; /* Melhor acessibilidade */
   }
 
   .submenu {
@@ -713,8 +730,11 @@ onUnmounted(() => {
 
   .submenu-item {
     color: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     font-size: 0.9rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .submenu-item:hover {
@@ -727,26 +747,111 @@ onUnmounted(() => {
     border-bottom-color: rgba(255, 255, 255, 0.2);
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 640px) {
+  .beach-overlay {
+    padding-bottom: 1rem;
+  }
+
+  .nav-container {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .nav-logo {
+    height: 28px;
+  }
+
+  .sub-brands {
+    margin-bottom: 0.4rem;
+  }
+
+  .sub-brand {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    flex-shrink: 0;
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    width: 260px;
+    padding: 4.5rem 1.2rem 2rem;
+  }
+
+  .nav-link {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .submenu-item {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .beach-overlay {
+    padding-bottom: 0.8rem;
+  }
+
+  .nav-container {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .nav-logo {
+    height: 24px;
+  }
+
+  .beach-header-bg {
+    height: 300px;
   }
 
   .sub-brands {
     gap: 0.6rem;
+    margin-bottom: 0.3rem;
   }
 
   .sub-brand {
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.5rem;
     font-size: 0.8rem;
     border-radius: 12px;
+    min-width: 100px;
   }
 
   .main-logo {
     height: 50px;
+  }
+
+  .nav-links {
+    width: 100vw;
+    padding: 4rem 1rem 2rem;
+  }
+
+  .nav-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+
+  .submenu-item {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    min-height: 40px;
+  }
+
+  .submenu-category {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 

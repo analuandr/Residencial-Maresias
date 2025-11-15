@@ -412,7 +412,7 @@ a:hover {
 
 .beach-overlay {
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 /* Adicionando efeitos de ondas */

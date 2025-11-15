@@ -4,12 +4,21 @@ Este documento explica como fazer alterações no site e realizar o deploy para 
 
 ## 🚀 Processo de Deploy (Resumo Rápido)
 
+**Opção 1 - Mais Simples (Recomendado):**
+```bash
+cd "Residencia Maresias"
+npm run deploy
+```
+
+**Opção 2 - Passo a Passo:**
 ```bash
 cd "Residencia Maresias"
 npm run build
 cp ../CNAME dist/
 npx gh-pages -d dist
 ```
+
+> **Nota**: O arquivo `CNAME` já está configurado na pasta `public/`, então será incluído automaticamente no build. A cópia manual só é necessária se precisar sobrescrever.
 
 ---
 
@@ -26,10 +35,12 @@ Residencial-Maresias/
 │   │   └── router/              # Configuração de rotas
 │   ├── public/
 │   │   ├── assets/              # Imagens e arquivos estáticos
+│   │   ├── 404.html             # Redirecionamento para SPA
+│   │   ├── CNAME                # Domínio customizado (incluído no build)
 │   │   └── index.html
 │   ├── package.json             # Dependências do projeto
 │   └── vite.config.js           # Configuração do Vite
-├── CNAME                        # Arquivo de domínio customizado
+├── CNAME                        # Arquivo de domínio customizado (backup)
 └── DEPLOY_GUIDE.md             # Este arquivo
 ```
 
@@ -127,17 +138,18 @@ npm run build
 - Este comando cria a pasta `dist/` com os arquivos otimizados
 - **IMPORTANTE**: Sempre execute este comando antes do deploy
 
-### **Passo 5: Copie o arquivo de domínio**
+### **Passo 5: Faça o deploy**
 
+**Opção 1 - Comando único (Recomendado):**
 ```bash
-cp ../CNAME dist/
+npm run deploy
 ```
 
-- Copia o arquivo CNAME para a pasta de build
-- **ESSENCIAL**: Sem isso, o domínio customizado não funciona
+Este comando automaticamente:
+- Executa o build (`npm run build`)
+- Faz o deploy para o GitHub Pages (`gh-pages -d dist`)
 
-### **Passo 6: Faça o deploy**
-
+**Opção 2 - Deploy manual:**
 ```bash
 npx gh-pages -d dist
 ```
@@ -145,7 +157,9 @@ npx gh-pages -d dist
 - Envia os arquivos para o GitHub Pages
 - Aguarde a mensagem "Published"
 
-### **Passo 7: Aguarde a atualização**
+> **Nota**: O arquivo `CNAME` na pasta `public/` é automaticamente incluído no build, garantindo que o domínio customizado funcione corretamente.
+
+### **Passo 6: Aguarde a atualização**
 
 - O site demora **2-5 minutos** para atualizar
 - Acesse `residencialmaresias.com.br` para verificar
@@ -171,7 +185,11 @@ Ctrl+C
 
 ```bash
 # Deploy completo (execute na pasta "Residencia Maresias")
-npm run build && cp ../CNAME dist/ && npx gh-pages -d dist
+# Opção 1 - Mais simples:
+npm run deploy
+
+# Opção 2 - Manual:
+npm run build && npx gh-pages -d dist
 ```
 
 ````
@@ -207,6 +225,10 @@ npm install -g gh-pages
 ### **Problema**: Erro de "Permission denied" no deploy
 
 **Solução**: Verifique se você tem permissão no repositório GitHub
+
+### **Problema**: Links diretos retornam erro 404
+
+**Solução**: O arquivo `404.html` já está configurado para redirecionar rotas não encontradas para o Vue Router. Isso resolve o problema de acessar URLs diretamente em Single Page Applications (SPA).
 
 ---
 
@@ -254,6 +276,6 @@ npm install -g gh-pages
 2. Teste localmente
 3. Execute o deploy
 
-**Criado em**: $(date)
-**Última atualização**: $(date)
-**Versão**: 1.0
+**Criado em**: 2024
+**Última atualização**: Dezembro 2024
+**Versão**: 1.1

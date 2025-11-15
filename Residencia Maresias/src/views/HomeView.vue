@@ -438,51 +438,134 @@ const distances = [
 }
 
 @media (max-width: 768px) {
-  /* Aumentar padding lateral no mobile */
   .section-full-width .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .welcome-section {
+    padding: 3rem 0;
   }
 
   .welcome-section h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 
-  .features,
+  .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .features {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.8rem;
+    text-align: center;
+  }
+
+  .feature-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .destaques-section {
+    padding: 3rem 0;
+  }
+
+  .destaques-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
   .destaques-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .destaque-card {
-    padding: 1.5rem;
+    padding: 1.8rem;
+  }
+
+  .destaque-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.2rem;
+  }
+
+  .destaque-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-section {
+    padding: 3rem 0;
   }
 
   .about-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .about-text h2 {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-image img {
+    border-radius: 12px;
+  }
+
+  .distances-section {
+    padding: 3rem 0;
+  }
+
+  .distances-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
   }
 
   .distances-grid {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 
   .distance-item {
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 0;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  /* Aumentar ainda mais o padding lateral em telas muito pequenas */
+@media (max-width: 640px) {
   .section-full-width .container {
-    padding: 0 2rem;
-  }
-
-  .section-full-width {
-    padding: 2rem 0;
+    padding: 0 0.8rem;
   }
 
   .welcome-section h1 {
@@ -493,10 +576,152 @@ const distances = [
     font-size: 1.2rem;
   }
 
-  .feature-card,
-  .destaque-card,
-  .distances-table {
-    padding: 1rem;
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .destaques-section h2 {
+    font-size: 2rem;
+  }
+
+  .destaque-card {
+    padding: 1.5rem;
+  }
+
+  .destaque-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .distances-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-full-width .container {
+    padding: 0 0.75rem;
+  }
+
+  .section-full-width {
+    padding: 2rem 0;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .features {
+    margin-top: 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .feature-card {
+    padding: 1.2rem;
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .destaques-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .destaques-grid {
+    gap: 1.2rem;
+  }
+
+  .destaque-card {
+    padding: 1.2rem;
+  }
+
+  .destaque-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .destaque-icon .material-icons {
+    font-size: 2rem;
+  }
+
+  .destaque-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .destaque-card p {
+    font-size: 0.9rem;
+  }
+
+  .about-content {
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .distances-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .distances-grid {
+    gap: 0.6rem;
+  }
+
+  .distance-item {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cta-section {
+    padding: 2rem 0;
+  }
+
+  .cta-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .btn-large {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
   }
 }
 </style>

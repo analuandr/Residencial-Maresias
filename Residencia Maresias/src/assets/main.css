@@ -200,27 +200,98 @@ section {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  /* Aumentar padding lateral no mobile para melhor espaçamento */
+  /* Ajustar padding lateral no mobile para melhor espaçamento */
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Para smartphones (tablets pequenos e smartphones) */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
 /* Para telas muito pequenas (smartphones pequenos) */
 @media (max-width: 480px) {
   .container {
-    padding: 0 2rem;
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 2px;
   }
 }

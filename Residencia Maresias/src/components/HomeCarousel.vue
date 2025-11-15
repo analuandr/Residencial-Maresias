@@ -270,45 +270,81 @@ onBeforeUnmount(() => {
   }
 
   .slide-content {
-    max-width: 70%; /* Reduzido de 75% para 70% */
-    min-width: 260px; /* Reduzido de 280px para 260px */
-    max-height: 170px; /* Aumentado de 150px para 170px */
-    min-height: 150px; /* Aumentado de 130px para 150px */
-    padding: 0.8rem; /* Reduzido de 1rem para 0.8rem */
-    border-radius: 10px; /* Reduzido de 12px para 10px */
+    max-width: 75%;
+    min-width: 280px;
+    max-height: 180px;
+    min-height: 160px;
+    padding: 1rem;
+    border-radius: 12px;
   }
 
   .slide-content h2 {
-    font-size: 1.1rem; /* Reduzido de 1.3rem para 1.1rem */
-    margin-bottom: 0.3rem; /* Reduzido de 0.4rem para 0.3rem */
-    line-height: 1.1;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
   }
 
   .slide-content p {
-    font-size: 0.75rem; /* Reduzido de 0.8rem para 0.75rem */
-    margin-bottom: 0.5rem; /* Reduzido de 0.6rem para 0.5rem */
-    line-height: 1.3;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
   }
 
   .btn {
-    padding: 0.5rem 1rem; /* Aumentado padding para melhor legibilidade */
-    font-size: 0.8rem; /* Aumentado font-size */
-    margin-top: 0.1rem;
-    min-width: 90px; /* Garantir largura mínima no tablet */
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+    min-width: 100px;
   }
 
   .carousel-control {
     width: 2.5rem;
     height: 2.5rem;
+    font-size: 1.2rem;
   }
 
   .carousel-slide {
-    padding-left: 5%;
+    padding-left: 8%;
     justify-content: center;
   }
 
   .slide-image img {
-    object-position: center center; /* Posicionamento padrão como antes */
+    object-position: center center;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-container {
+    height: 55vh;
+    min-height: 380px;
+  }
+
+  .slide-content {
+    max-width: 80%;
+    min-width: 260px;
+    max-height: 160px;
+    min-height: 140px;
+    padding: 0.9rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .slide-content p {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    min-width: 90px;
+  }
+
+  .carousel-slide {
+    padding-left: 6%;
   }
 }
 
@@ -319,36 +355,46 @@ onBeforeUnmount(() => {
   }
 
   .slide-content {
-    max-width: 80%; /* Reduzido de 85% para 80% */
-    min-width: 230px; /* Reduzido de 250px para 230px */
-    max-height: 140px; /* Aumentado de 120px para 140px */
-    min-height: 120px; /* Aumentado de 100px para 120px */
-    padding: 0.6rem; /* Reduzido de 0.8rem para 0.6rem */
-    border-radius: 8px; /* Reduzido de 10px para 8px */
+    max-width: 85%;
+    min-width: 240px;
+    max-height: 140px;
+    min-height: 120px;
+    padding: 0.8rem;
+    border-radius: 10px;
   }
 
   .slide-content h2 {
-    font-size: 0.95rem; /* Reduzido de 1rem para 0.95rem */
-    margin-bottom: 0.2rem; /* Reduzido de 0.3rem para 0.2rem */
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
     line-height: 1.1;
   }
 
   .slide-content p {
-    font-size: 0.65rem; /* Reduzido de 0.7rem para 0.65rem */
-    margin-bottom: 0.3rem; /* Reduzido de 0.4rem para 0.3rem */
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
     line-height: 1.3;
   }
 
   .btn {
-    padding: 0.4rem 0.8rem; /* Tamanho adequado para mobile pequeno */
-    font-size: 0.7rem; /* Tamanho de fonte legível */
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
     margin-top: 0.1rem;
-    min-width: 80px; /* Garantir largura mínima no mobile */
-    border-radius: 6px; /* Bordas mais suaves no mobile */
+    min-width: 85px;
+    border-radius: 6px;
+  }
+
+  .carousel-control {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .carousel-slide {
+    padding-left: 4%;
   }
 
   .slide-image img {
-    object-position: center top; /* No mobile, prioriza mostrar o topo */
+    object-position: center top;
   }
 }
 </style>

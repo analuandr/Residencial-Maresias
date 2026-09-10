@@ -205,7 +205,8 @@ onUnmounted(() => {
               </span>
               <div class="submenu" v-if="showSubmenuAcomodacoes">
                 <div class="submenu-category">
-                  <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
+                  <span class="material-icons">location_on</span>
+                  {{ t('footer.locations.bombas') }}
                 </div>
                 <RouterLink
                   to="/acomodacoes/bombas/1-dormitorio"
@@ -294,7 +295,8 @@ onUnmounted(() => {
               </span>
               <div class="submenu" v-if="showSubmenuReservar">
                 <div class="submenu-category">
-                  <span class="material-icons">location_on</span> {{ t('footer.locations.bombas') }}
+                  <span class="material-icons">location_on</span>
+                  {{ t('footer.locations.bombas') }}
                 </div>
                 <RouterLink
                   to="/acomodacoes/bombas/1-dormitorio"
@@ -670,26 +672,25 @@ onUnmounted(() => {
     top: 0;
     right: 0;
     width: 280px;
-    height: 100vh;
+    height: auto;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 5rem 1.5rem 2rem;
+    padding: 5rem 1.5rem 10rem;
     gap: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+    overflow: hidden;
     will-change: transform, opacity;
     visibility: hidden;
     opacity: 0;
     display: flex;
     pointer-events: none;
     transform: translateX(100%);
+    box-sizing: border-box;
   }
 
   .nav-links.mobile-open {
@@ -705,6 +706,7 @@ onUnmounted(() => {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
+    flex-shrink: 0;
   }
 
   .nav-link {
@@ -726,6 +728,10 @@ onUnmounted(() => {
     margin-top: 0.5rem;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Remove limitações de altura para permitir expansão completa */
+    max-height: none;
+    overflow: visible;
+    flex-shrink: 0;
   }
 
   .submenu-item {

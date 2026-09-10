@@ -39,7 +39,7 @@ const ap201 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '201' }),
     },
   ],
-  linkReserva: 'https://marcosimoveis.com.br/4pessoas-1quartos-1garagens-pet-l094',
+  linkReserva: 'https://aluguel.marcosimoveis.com.br/pt/apartment/IG17J',
   rotaInterna: '/acomodacoes/bombas/1-dormitorio',
 }))
 
@@ -77,7 +77,7 @@ const ap202 = computed(() => ({
       alt: t('photoCaption.apartmentPhoto', { number: '202' }),
     },
   ],
-  linkReserva: 'https://5724.apre.me/4pessoas-1quartos-1garagens-pet-l095',
+  linkReserva: 'https://aluguel.marcosimoveis.com.br/pt/apartment/IG09J',
   rotaInterna: '/acomodacoes/bombas/1-dormitorio',
 }))
 </script>
